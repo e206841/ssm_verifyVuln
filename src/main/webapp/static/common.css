@@ -1,0 +1,333 @@
+a {
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.btn-link {
+    outline: none !important;
+}
+
+/*去掉ie文本框的眼睛和叉号*/
+
+::-ms-clear,
+::-ms-reveal {
+    display: none;
+}
+
+/*!去掉ie文本框的眼睛和叉号*/
+
+/*上下居中对齐*/
+
+.middle>* {
+    vertical-align: middle;
+}
+
+.middle::after {
+    content: "";
+    height: inherit;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/*!上下居中对齐*/
+
+.shadow-box {
+    box-shadow: 0 0 0 2px rgba(175, 175, 175, .1);
+}
+
+/*修改bootstrap默认样式*/
+
+.control-label {
+    padding-top: 7px;
+    text-align: right;
+    padding-right: 6px;
+    color: #808080;
+}
+
+/*去掉表单input、textarea的边框*/
+
+input.form-control.removeBorder,
+textarea.form-control.removeBorder {
+    background-color: white;
+    border: 0;
+    outline: none;
+    box-shadow: none;
+}
+
+/*表单验证样式*/
+
+.validation-error {
+    position: absolute;
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+/*textarea禁止变化大小*/
+
+textarea {
+    resize: none;
+}
+
+/*面包屑导航*/
+
+.breadcrumb-container {
+    padding: 8px 15px;
+    margin: 0 0 15px;
+    background-color: white;
+    font-weight: bold;
+    letter-spacing: .1em;
+    color: #62b0e1;
+}
+
+.breadcrumb-container>li {
+    list-style: none;
+    display: inline-block;
+}
+
+.breadcrumb-container>li+li::before {
+    content: ">";
+}
+
+.breadcrumb-item {
+    cursor: auto;
+}
+
+.breadcrumb-item.active {
+    cursor: auto;
+    color: #777;
+}
+
+/*!面包屑导航*/
+
+/*自定义布局样式:为了实现等间距布局*/
+
+.average-container {
+    overflow: hidden;
+}
+
+.average-container [class*=container] {
+    width: inherit;
+    margin-right: -15px;
+}
+
+.average-container [class*=col-] {
+    padding-right: 15px;
+}
+
+.no-padding-right {
+    padding-right: 0;
+}
+
+/*!自定义布局样式*/
+
+.layout-box {
+    margin: 15px 0;
+}
+
+/* .page-module {
+    margin-top: 15px;
+} */
+
+.page-content {
+    min-height: 500px;
+}
+
+.page-title {
+    padding: 13px 15px;
+    background-color: #f5f6f8;
+    color: #59595b;
+    /* font-weight: bold; */
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+.page-content {
+    padding: 30px;
+    background-color: white;
+    overflow: hidden;
+}
+
+/*搜索面板*/
+
+.search-bar {
+    color: #444;
+}
+
+.btn-search {
+    background-color: #62b0e1;
+    color: #fff;
+}
+
+.btn-search:hover,
+.btn-search:focus {
+    background-color: #55aae0;
+    color: #fff;
+}
+
+/*!搜索面板*/
+
+/*操作按钮样式*/
+
+.operate-btn {
+    margin: 0 15px 15px 0;
+}
+
+.operate-btn-text {
+    margin-left: 1px;
+}
+
+/* 表格中操作按钮样式 */
+
+.table .btn {
+    color: #fff;
+}
+
+.table-btn {
+    margin-right: 10px;
+}
+
+/*删除按钮样式*/
+
+.delete-btn {
+    background-color: #999999;
+}
+
+.delete-btn:hover {
+    background-color: #8f8d8d;
+}
+
+/* 确定和提交按钮样式 */
+
+.ok-btn {
+    padding: 6px 30px;
+    background-color: #337ab7;
+    color: #fff;
+    margin-right: 10px
+}
+
+.ok-btn:hover,
+.ok-btn:focus {
+    color: #fff;
+    background-color: #2e6da4;
+}
+
+/* 取消和关闭按钮样式 */
+
+.close-btn {
+    padding: 6px 30px;
+    color: #59595b;
+    background-color: #e6e6e6;
+}
+
+.close-btn:hover {
+    background-color: #D7D7D7;
+}
+
+/*修改按钮样式*/
+
+.edit-btn {
+    background-color: #f1ce1a;
+}
+
+.edit-btn:hover {
+    background-color: #ecc811;
+}
+
+/*模态框自适应宽度*/
+
+.modal-screen {
+    width: 96%;
+}
+
+/*修改bootstrap模态框底部样式*/
+
+.checkDialog .modal-footer,
+.defaultDialog .modal-footer {
+    text-align: center;
+}
+
+/*导入-模态框的样式*/
+
+/* .modal-header {
+    border-bottom: none;
+}
+
+.btn-link:hover,
+.btn-link:focus {
+    text-decoration: none;
+}
+
+.importDialog .modal-body {
+    padding-bottom: 150px;
+}
+
+.importDialog [type=submit] {
+    padding: 6px 21px;
+}
+
+.importDialog .btn-link {
+    font-weight: bold;
+}
+
+.infoFile-validation-error {
+    position: absolute;
+    white-space: nowrap;
+    font-size: 12px;
+    bottom: -20px;
+} */
+
+/*！导入-模态框的样式*/
+
+/*模态框详情表格样式*/
+
+.details-table>tbody>tr>td,
+.details-table>tbody>tr>th {
+    border: 1px solid #ddd !important;
+}
+
+/*给表格插件增加边框*/
+
+.add-border {
+    border: 1px solid #ddd;
+}
+
+/*给表格插件增加纵向滚动条*/
+
+.add-scroll-y {
+    max-height: 1150px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/*给表格插件增加横向和纵向滚动条*/
+
+.add-scroll {
+    max-height: 600px;
+    overflow: auto;
+}
+
+.add-scroll-inner {
+    min-width: 600px;
+}
+
+.add-scroll-inner .table {
+    margin-bottom: 0;
+}
+
+/*树形图样式*/
+
+ul.ztree {
+    margin-top: 0;
+    border: 1px solid #617775;
+    background: #f0f6e4;
+    height: 230px;
+    overflow-y: scroll;
+    overflow-x: auto;
+}

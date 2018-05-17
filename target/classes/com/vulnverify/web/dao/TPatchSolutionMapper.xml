@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.vulnverify.web.dao.TPatchSolutionMapper" >
+  <resultMap id="BaseResultMap" type="com.vulnverify.web.model.TPatchSolution" >
+    <id column="PATCH_ID" property="patchId" jdbcType="INTEGER" />
+    <result column="PATCH_NO" property="patchNo" jdbcType="VARCHAR" />
+    <result column="PATCH_NAME" property="patchName" jdbcType="VARCHAR" />
+    <result column="FILE_NAME" property="fileName" jdbcType="VARCHAR" />
+    <result column="PATCH_FILE_URL" property="patchFileUrl" jdbcType="VARCHAR" />
+    <result column="FILE_MD5" property="fileMd5" jdbcType="VARCHAR" />
+    <result column="PATCH_FILE_SIZE" property="patchFileSize" jdbcType="BIGINT" />
+    <result column="IMPORTANCE_GRADE" property="importanceGrade" jdbcType="VARCHAR" />
+    <result column="VULN_ID" property="vulnId" jdbcType="INTEGER" />
+    <result column="VULN_NAME" property="vulnName" jdbcType="VARCHAR" />
+    <result column="CREATE_USER" property="createUser" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    PATCH_ID, PATCH_NO, PATCH_NAME, FILE_NAME, PATCH_FILE_URL, FILE_MD5, PATCH_FILE_SIZE, 
+    IMPORTANCE_GRADE, VULN_ID, VULN_NAME, CREATE_USER, CREATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from T_PATCH_SOLUTION
+    where PATCH_ID = #{patchId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from T_PATCH_SOLUTION
+    where PATCH_ID = #{patchId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.vulnverify.web.model.TPatchSolution" >
+    insert into T_PATCH_SOLUTION (PATCH_ID, PATCH_NO, PATCH_NAME, 
+      FILE_NAME, PATCH_FILE_URL, FILE_MD5, 
+      PATCH_FILE_SIZE, IMPORTANCE_GRADE, VULN_ID, 
+      VULN_NAME, CREATE_USER, CREATE_TIME
+      )
+    values (#{patchId,jdbcType=INTEGER}, #{patchNo,jdbcType=VARCHAR}, #{patchName,jdbcType=VARCHAR}, 
+      #{fileName,jdbcType=VARCHAR}, #{patchFileUrl,jdbcType=VARCHAR}, #{fileMd5,jdbcType=VARCHAR}, 
+      #{patchFileSize,jdbcType=BIGINT}, #{importanceGrade,jdbcType=VARCHAR}, #{vulnId,jdbcType=INTEGER}, 
+      #{vulnName,jdbcType=VARCHAR}, #{createUser,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.vulnverify.web.model.TPatchSolution" >
+    insert into T_PATCH_SOLUTION
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="patchId != null" >
+        PATCH_ID,
+      </if>
+      <if test="patchNo != null" >
+        PATCH_NO,
+      </if>
+      <if test="patchName != null" >
+        PATCH_NAME,
+      </if>
+      <if test="fileName != null" >
+        FILE_NAME,
+      </if>
+      <if test="patchFileUrl != null" >
+        PATCH_FILE_URL,
+      </if>
+      <if test="fileMd5 != null" >
+        FILE_MD5,
+      </if>
+      <if test="patchFileSize != null" >
+        PATCH_FILE_SIZE,
+      </if>
+      <if test="importanceGrade != null" >
+        IMPORTANCE_GRADE,
+      </if>
+      <if test="vulnId != null" >
+        VULN_ID,
+      </if>
+      <if test="vulnName != null" >
+        VULN_NAME,
+      </if>
+      <if test="createUser != null" >
+        CREATE_USER,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="patchId != null" >
+        #{patchId,jdbcType=INTEGER},
+      </if>
+      <if test="patchNo != null" >
+        #{patchNo,jdbcType=VARCHAR},
+      </if>
+      <if test="patchName != null" >
+        #{patchName,jdbcType=VARCHAR},
+      </if>
+      <if test="fileName != null" >
+        #{fileName,jdbcType=VARCHAR},
+      </if>
+      <if test="patchFileUrl != null" >
+        #{patchFileUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="fileMd5 != null" >
+        #{fileMd5,jdbcType=VARCHAR},
+      </if>
+      <if test="patchFileSize != null" >
+        #{patchFileSize,jdbcType=BIGINT},
+      </if>
+      <if test="importanceGrade != null" >
+        #{importanceGrade,jdbcType=VARCHAR},
+      </if>
+      <if test="vulnId != null" >
+        #{vulnId,jdbcType=INTEGER},
+      </if>
+      <if test="vulnName != null" >
+        #{vulnName,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null" >
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.vulnverify.web.model.TPatchSolution" >
+    update T_PATCH_SOLUTION
+    <set >
+      <if test="patchNo != null" >
+        PATCH_NO = #{patchNo,jdbcType=VARCHAR},
+      </if>
+      <if test="patchName != null" >
+        PATCH_NAME = #{patchName,jdbcType=VARCHAR},
+      </if>
+      <if test="fileName != null" >
+        FILE_NAME = #{fileName,jdbcType=VARCHAR},
+      </if>
+      <if test="patchFileUrl != null" >
+        PATCH_FILE_URL = #{patchFileUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="fileMd5 != null" >
+        FILE_MD5 = #{fileMd5,jdbcType=VARCHAR},
+      </if>
+      <if test="patchFileSize != null" >
+        PATCH_FILE_SIZE = #{patchFileSize,jdbcType=BIGINT},
+      </if>
+      <if test="importanceGrade != null" >
+        IMPORTANCE_GRADE = #{importanceGrade,jdbcType=VARCHAR},
+      </if>
+      <if test="vulnId != null" >
+        VULN_ID = #{vulnId,jdbcType=INTEGER},
+      </if>
+      <if test="vulnName != null" >
+        VULN_NAME = #{vulnName,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null" >
+        CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where PATCH_ID = #{patchId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.vulnverify.web.model.TPatchSolution" >
+    update T_PATCH_SOLUTION
+    set PATCH_NO = #{patchNo,jdbcType=VARCHAR},
+      PATCH_NAME = #{patchName,jdbcType=VARCHAR},
+      FILE_NAME = #{fileName,jdbcType=VARCHAR},
+      PATCH_FILE_URL = #{patchFileUrl,jdbcType=VARCHAR},
+      FILE_MD5 = #{fileMd5,jdbcType=VARCHAR},
+      PATCH_FILE_SIZE = #{patchFileSize,jdbcType=BIGINT},
+      IMPORTANCE_GRADE = #{importanceGrade,jdbcType=VARCHAR},
+      VULN_ID = #{vulnId,jdbcType=INTEGER},
+      VULN_NAME = #{vulnName,jdbcType=VARCHAR},
+      CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}
+    where PATCH_ID = #{patchId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByVulnId"  resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from T_PATCH_SOLUTION
+    where VULN_ID = #{vulnId}
+  </select>
+</mapper>

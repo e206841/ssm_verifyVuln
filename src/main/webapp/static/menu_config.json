@@ -1,0 +1,26 @@
+{
+  "menu-device-manage": {
+    "name": "设备管理",
+    "page": "deviceManagement"
+  },
+  "menu-image-manage": {
+    "name": "镜像管理",
+    "page": "imageManagement"
+  },
+  "menu-user-manage": {
+    "name": "用户管理",
+    "page": "userManagement"
+  },
+  "menu-container-manage": {
+    "name": "容器管理",
+    "page": "containerManagement"
+  },
+  "menu-vuln-manage": {
+    "name": "漏洞管理",
+    "page": "vulnManagement"
+  },
+  "menu-vuln-verify": {
+    "name": "漏洞验证",
+    "page": "vulnVerify"
+  }
+}

@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vulnverify.web.dao.THostMapper">
+  <resultMap id="BaseResultMap" type="com.vulnverify.web.model.THost">
+    <id column="HOSTMACHINE_ID" jdbcType="INTEGER" property="hostMachineId" />
+    <result column="HOSTMACHINE_UUID" jdbcType="VARCHAR" property="hostMachineUuid" />
+    <result column="HOSTMACHINE_IP" jdbcType="CHAR" property="hostMachineIp" />
+    <result column="HOSTNAME" jdbcType="VARCHAR" property="hostName" />
+    <result column="STATUS" jdbcType="VARCHAR" property="status" />
+    <result column="CPU_CORE_NUM" jdbcType="INTEGER" property="cpuCoreNum" />
+    <result column="RAM_SIZE" jdbcType="INTEGER" property="ramSize" />
+    <result column="DISK_SIZE" jdbcType="INTEGER" property="diskSize" />
+    <result column="CURRENT_DISK_SIZE" jdbcType="DECIMAL" property="currentDiskSize" />
+    <result column="RAM_TOTAL_USAGE" jdbcType="DECIMAL" property="ramTotalUsage" />
+    <result column="CURRENT_CPU" jdbcType="DECIMAL" property="currentCpu" />
+    <result column="UPDATE_USER" jdbcType="VARCHAR" property="updateUser" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="CREATE_USER" jdbcType="VARCHAR" property="createUser" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    HOSTMACHINE_ID, HOSTMACHINE_UUID, HOSTMACHINE_IP, HOSTNAME, STATUS, CPU_CORE_NUM, RAM_SIZE, DISK_SIZE, 
+    CURRENT_DISK_SIZE, RAM_TOTAL_USAGE, CURRENT_CPU,UPDATE_USER,UPDATE_TIME,CREATE_USER,CREATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_PLATFORM_HOSTMACHINE
+    where HOSTMACHINE_ID = #{hostMachineId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_PLATFORM_HOSTMACHINE
+    where HOSTMACHINE_ID = #{hostMachineId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.vulnverify.web.model.THost">
+    insert into T_PLATFORM_HOSTMACHINE (HOSTMACHINE_ID, HOSTMACHINE_UUID, HOSTMACHINE_IP, HOSTNAME, STATUS, CPU_CORE_NUM, RAM_SIZE, DISK_SIZE, 
+    	CURRENT_DISK_SIZE, RAM_TOTAL_USAGE, CURRENT_CPU,UPDATE_USER,UPDATE_TIME,CREATE_USER,CREATE_TIME
+      )
+    values (#{hostMachineId,jdbcType=INTEGER}, #{hostMachineUuid,jdbcType=VARCHAR}, #{hostMachineIp,jdbcType=CHAR}, 
+      #{hostName,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{cpuCoreNum,jdbcType=INTEGER}, 
+      #{ramSize,jdbcType=INTEGER}, #{diskSize,jdbcType=INTEGER}, #{currentDiskSize,jdbcType=DECIMAL}, 
+      #{ramTotalUsage,jdbcType=DECIMAL}, #{currentCpu,jdbcType=DECIMAL}, #{updateUser,jdbcType=VARCHAR},
+      #{updateTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.vulnverify.web.model.THost">
+    insert into T_PLATFORM_HOSTMACHINE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="hostMachineId != null">
+        HOSTMACHINE_ID,
+      </if>
+      <if test="hostMachineUuid != null">
+        HOSTMACHINE_UUID,
+      </if>
+      <if test="hostMachineIp != null">
+        HOSTMACHINE_IP,
+      </if>
+      <if test="hostName != null">
+        HOSTNAME,
+      </if>
+      <if test="status != null">
+        STATUS,
+      </if>
+      <if test="cpuCoreNum != null">
+        CPU_CORE_NUM,
+      </if>
+      <if test="ramSize != null">
+        RAM_SIZE,
+      </if>
+      <if test="diskSize != null">
+        DISK_SIZE,
+      </if>
+      <if test="currentDiskSize != null">
+        CURRENT_DISK_SIZE,
+      </if>
+      <if test="ramTotalUsage != null">
+        RAM_TOTAL_USAGE,
+      </if>
+      <if test="currentCpu != null">
+        CURRENT_CPU,
+      </if>
+       <if test="updateUser != null">
+        UPDATE_USER,
+      </if>
+       <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+       <if test="createUser != null">
+        CREATE_USER,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="hostMachineId != null">
+        #{hostMachineId,jdbcType=INTEGER},
+      </if>
+      <if test="hostMachineUuid != null">
+        #{hostMachineUuid,jdbcType=VARCHAR},
+      </if>
+      <if test="hostMachineIp != null">
+        #{hostMachineIp,jdbcType=CHAR},
+      </if>
+      <if test="hostName != null">
+        #{hostName,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="cpuCoreNum != null">
+        #{cpuCoreNum,jdbcType=INTEGER},
+      </if>
+      <if test="ramSize != null">
+        #{ramSize,jdbcType=INTEGER},
+      </if>
+      <if test="diskSize != null">
+        #{diskSize,jdbcType=INTEGER},
+      </if>
+      <if test="currentDiskSize != null">
+        #{currentDiskSize,jdbcType=DECIMAL},
+      </if>
+      <if test="ramTotalUsage != null">
+        #{ramTotalUsage,jdbcType=DECIMAL},
+      </if>
+      <if test="currentCpu != null">
+        #{currentCpu,jdbcType=DECIMAL},
+      </if>      
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.vulnverify.web.model.THost">
+    update T_PLATFORM_HOSTMACHINE
+    <set>
+      <if test="hostMachineUuid != null">
+        HOSTMACHINE_UUID = #{hostMachineUuid,jdbcType=VARCHAR},
+      </if>
+       <if test="hostMachineIp != null">
+        HOSTMACHINE_IP = #{hostMachineIp,jdbcType=CHAR},
+      </if>
+      <if test="hostName != null">
+        HOSTNAME = #{hostName,jdbcType=VARCHAR},
+      </if>
+       <if test="status != null">
+        STATUS = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="cpuCoreNum != null">
+        CPU_CORE_NUM = #{cpuCoreNum,jdbcType=INTEGER},
+      </if>      
+      <if test="ramSize != null">
+        RAM_SIZE = #{ramSize,jdbcType=INTEGER},
+      </if>
+      <if test="diskSize != null">
+        DISK_SIZE = #{diskSize,jdbcType=INTEGER},
+      </if>
+      <if test="currentDiskSize != null">
+        CURRENT_DISK_SIZE = #{currentDiskSize,jdbcType=DECIMAL},
+      </if>
+      <if test="ramTotalUsage != null">
+        RAM_TOTAL_USAGE = #{ramTotalUsage,jdbcType=DECIMAL},
+      </if>
+      <if test="currentCpu != null">
+        CURRENT_CPU = #{currentCpu,jdbcType=DECIMAL},
+      </if>      
+      <if test="updateUser != null">
+        UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where HOSTMACHINE_ID = #{hostMachineId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.vulnverify.web.model.THost">
+    update T_PLATFORM_HOSTMACHINE
+    set 
+    	HOSTMACHINE_ID = #{hostMachineId,jdbcType=INTEGER}, 
+    	HOSTMACHINE_UUID = #{hostMachineUuid,jdbcType=VARCHAR},
+    	HOSTMACHINE_IP = #{hostMachineIp,jdbcType=CHAR},
+    	HOSTNAME = #{hostName,jdbcType=VARCHAR}, 
+    	STATUS = #{status,jdbcType=VARCHAR}, 
+    	CPU_CORE_NUM = #{cpuCoreNum,jdbcType=INTEGER}, 
+    	RAM_SIZE = #{ramSize,jdbcType=INTEGER}, 
+    	DISK_SIZE = #{diskSize,jdbcType=INTEGER}, 
+    	CURRENT_DISK_SIZE = #{currentDiskSize,jdbcType=DECIMAL},
+    	RAM_TOTAL_USAGE = #{ramTotalUsage,jdbcType=DECIMAL}, 
+    	CURRENT_CPU = #{currentCpu,jdbcType=DECIMAL},
+      	UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+      	UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      	CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      	CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}
+    where HOSTMACHINE_ID = #{hostMachineId,jdbcType=INTEGER}
+  </update>
+   <resultMap id="HostView" type="com.vulnverify.web.model.view.HostView">   
+    <id column="HOSTMACHINE_ID" jdbcType="INTEGER" property="hostMachineId" />
+    <result column="HOSTMACHINE_UUID" jdbcType="VARCHAR" property="hostMachineUuid" />
+    <result column="HOSTMACHINE_IP" jdbcType="CHAR" property="hostMachineIp" />
+    <result column="HOSTNAME" jdbcType="VARCHAR" property="hostName" />
+    <result column="STATUS" jdbcType="VARCHAR" property="status" />
+    <result column="CPU_CORE_NUM" jdbcType="INTEGER" property="cpuCoreNum" />
+    <result column="RAM_SIZE" jdbcType="INTEGER" property="ramSize" />
+    <result column="DISK_SIZE" jdbcType="INTEGER" property="diskSize" />
+    <result column="CURRENT_DISK_SIZE" jdbcType="DECIMAL" property="currentDiskSize" />
+    <result column="RAM_TOTAL_USAGE" jdbcType="DECIMAL" property="ramTotalUsage" />
+    <result column="CURRENT_CPU" jdbcType="DECIMAL" property="currentCpu" />
+    <result column="UPDATE_USER" jdbcType="VARCHAR" property="updateUser" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <!--分页查询列表-->
+  <select id="getList" parameterType="map" resultMap="HostView">
+	  select  HOSTMACHINE_ID, HOSTMACHINE_UUID, HOSTMACHINE_IP, HOSTNAME, STATUS, CPU_CORE_NUM, RAM_SIZE, DISK_SIZE, 
+    	CURRENT_DISK_SIZE, RAM_TOTAL_USAGE, CURRENT_CPU,UPDATE_USER,UPDATE_TIME
+	  from T_PLATFORM_HOSTMACHINE
+	  where 1=1
+     	 <if test="hostMachineIp != null and hostMachineIp != ''" >
+	      and  HOSTMACHINE_IP like concat('%',#{hostMachineIp,jdbcType=CHAR},'%')
+	     </if>
+	      <if test="status != null and status != ''" >
+	      and STATUS=#{status,jdbcType=VARCHAR}
+	     </if>
+  		order by UPDATE_TIME DESC
+  </select>
+   <select id="selectMatch" resultMap="BaseResultMap" parameterType="com.vulnverify.web.model.THost" >
+    select 
+    <include refid="Base_Column_List" />
+    from T_PLATFORM_HOSTMACHINE
+    <where>
+	  <if test="hostMachineUuid != null">
+        HOSTMACHINE_UUID = #{hostMachineUuid,jdbcType=VARCHAR}
+      </if>
+       <if test="hostMachineIp != null">
+       AND HOSTMACHINE_IP = #{hostMachineIp,jdbcType=CHAR}
+      </if>
+      <if test="hostName != null">
+       AND HOSTNAME = #{hostName,jdbcType=VARCHAR}
+      </if>
+       <if test="status != null">
+       AND STATUS = #{status,jdbcType=VARCHAR}
+      </if>
+      <if test="cpuCoreNum != null">
+       AND CPU_CORE_NUM = #{cpuCoreNum,jdbcType=INTEGER}
+      </if>      
+      <if test="ramSize != null">
+       AND RAM_SIZE = #{ramSize,jdbcType=INTEGER}
+      </if>
+      <if test="diskSize != null">
+       AND DISK_SIZE = #{diskSize,jdbcType=INTEGER}
+      </if>
+      <if test="currentDiskSize != null">
+       AND CURRENT_DISK_SIZE = #{currentDiskSize,jdbcType=DECIMAL}
+      </if>
+      <if test="ramTotalUsage != null">
+       AND RAM_TOTAL_USAGE = #{ramTotalUsage,jdbcType=DECIMAL}
+      </if>
+      <if test="currentCpu != null">
+       AND CURRENT_CPU = #{currentCpu,jdbcType=DECIMAL}
+      </if>      
+      <if test="updateUser != null">
+       AND UPDATE_USER = #{updateUser,jdbcType=VARCHAR}
+      </if>
+      <if test="updateTime != null">
+       AND UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="createUser != null">
+       AND CREATE_USER = #{createUser,jdbcType=VARCHAR}
+      </if>
+      <if test="createTime != null">
+       AND CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}
+      </if> 	
+    </where>
+   </select>
+   <select id="selectByUuid" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+     from T_PLATFORM_HOSTMACHINE
+     where HOSTMACHINE_UUID = #{hostMachineUuid,jdbcType=VARCHAR}
+   </select>
+</mapper>

@@ -1,0 +1,183 @@
+<link rel="stylesheet" href="module/containerManagement/containerManagement.css" />
+<div class="page-module page-module-main">
+    <div class="page-title shadow-box">
+        容器管理
+    </div>
+    <div class="page-content">
+        <form class="search-bar">
+            <div class="row">
+                <div class="form-group col-xs-35 col-md-35">
+                    <label class="control-label col-md-40">容器名:</label>
+                    <div class="col-md-80">
+                        <input class="form-control" name="containerName">
+                        <!--<select class="form-control" name="userType">
+                            <option value="">请选择</option>
+                            <option value="0">环境管理人员</option>
+                            <option value="1">漏洞验证人员</option>
+                        </select>-->
+                    </div>
+                </div>
+                <div class="form-group col-xs-35 col-md-35">
+                    <label class="control-label col-md-40">镜像:</label>
+                    <div class="col-md-80">
+                        <input class="form-control" name="imageName">
+                    </div>
+                </div>
+                <div class="form-group col-xs-20 col-md-20">
+                    <!--  <label class="control-label invisible">查询</label> -->
+                    <div class="col-md-80 text-right">
+                        <button type="submit" class="btn btn-primary" data-code="">
+                            <span class="fa fa-search"></span>
+                            查询
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group col-xs-15 col-md-15">
+                    <div class="col-md-80">
+                        <a class="btn btn-warning add-btn" data-code="">
+                            <span class="fa fa-plus"></span>
+                            <span class="operate-btn-text">添加</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <table id="userManagement-table"></table>
+        <div id="userManagement-pagination"></div>
+    </div>
+</div>
+
+<!--添加的弹框开始-->
+<div id="editDialog" class="modal fade" tabindex="-1" role="dialog" data-backdrop="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title text-primary text-left"></h4>
+            </div>
+            <div class="modal-body">
+                <form id="userInfo-form" class="form-horizontal dialog-form">
+                    <div class="form-group">
+                        <label class="col-md-35 col-xs-35 control-label">容器名:</label>
+                        <div class="col-md-60 col-xs-60">
+                            <input name="containerName" class="form-control">
+                            <span class="required" aria-required="true">*</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-35 col-xs-35 control-label">镜像:</label>
+                        <div class="col-md-60 col-xs-60">
+                             <select class="form-control" name="imageId" id="imgName">
+                                <option value="">请选择</option>
+                            </select>
+                            <!--<input name="imageName" class="form-control" title="" placeholder="">-->
+                            <span class="required" aria-required="true">*</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-35 col-xs-35 control-label">描述:</label>
+                        <div class="col-md-60 col-xs-60">
+                            <input name="discription" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-35 col-xs-35 control-label">CPU:</label>
+                        <div class="col-md-60 col-xs-60">
+                            <input name="cpuCoreNum" class="form-control">
+                            <span class="required" aria-required="true">*</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-35 col-xs-35 control-label">RAM:</label>
+                        <div class="col-md-60 col-xs-60">
+                            <input name="ramSize" class="form-control">
+                            <span class="required" aria-required="true">*</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-35 col-xs-35 control-label">DISK:</label>
+                        <div class="col-md-60 col-xs-60">
+                            <input name="diskSize" class="form-control">
+                            <span class="required" aria-required="true">*</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-120 col-xs-110 text-center">
+                            <input type="submit" class="btn ok-btn" value="确定" />
+                            <input type="reset" class="btn close-btn" value="取消" data-dismiss="modal"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--添加的弹框结束-->
+
+<!--虚拟机页面开始-->
+<div class="page-module page-module-image hidden">
+    <div class="page-title shadow-box shadow-box-image">
+        <button type="button" class="btn btn-info goBack" style="margin-right: 10px;">返回</button>
+        <button type="button" class="btn btn-danger closeVm">关闭</button>
+    </div>
+    <div class="page-content page-content-teshu">
+        <div class="page-content-left">
+        	<div id="noVNC_screen">
+              <canvas id="noVNC_canvas" width="0" height="0">
+                  Canvas not supported.
+              </canvas>
+          </div>
+        </div>
+        <div class="page-content-right">
+          <div class="page-content-right-title">
+          	容器信息
+          </div>
+          <form id="image-form" class="form-horizontal dialog-form" style="padding:  10px 0px;">
+              <div class="row">
+                  <div class="form-group">
+                      <label class="col-md-36 col-xs-30 control-label">容器名称:</label>
+                      <div class="col-md-80 col-xs-80">
+                          <input class="form-control removeBorder" name="containerName" readonly>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="form-group">
+                      <label class="col-md-36 col-xs-30 control-label">CPU:</label>
+                      <div class="col-md-80 col-xs-80">
+                          <input class="form-control removeBorder" name="cpuCoreNum" readonly>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="form-group">
+                      <label class="col-md-36 col-xs-30 control-label">内存:</label>
+                      <div class="col-md-80 col-xs-80">
+                          <input class="form-control removeBorder" name="ramSize" readonly>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="form-group">
+                      <label class="col-md-36 col-xs-30 control-label">宿主机:</label>
+                      <div class="col-md-80 col-xs-80">
+                          <input class="form-control removeBorder" name="hostName" readonly>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                    <div class="form-group">
+                        <label class="col-md-36 col-xs-36 control-label">容器描述:</label>
+                        <div class="col-md-80 col-xs-80">
+                            <textarea class="form-control removeBorder" name="discription" cols="100" rows="10" readonly></textarea>
+                        </div>
+                    </div>
+                </div>
+          </form>
+        </div>
+    </div>
+</div>
+<!--虚拟机页面结束-->
+<script src="module/containerManagement/containerManagement.js"></script>

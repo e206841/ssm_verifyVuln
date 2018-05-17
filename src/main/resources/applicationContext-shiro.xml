@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans classpath:schema/spring-beans.xsd
+       http://www.springframework.org/schema/util classpath:schema/spring-util.xsd">
+
+    <description>apache shiro配置</description>
+
+	 <!-- web.xml中shiro的filter对应的bean -->
+    <!-- Shiro 的Web过滤器 -->
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+         <!-- loginUrl认证提交地址，如果没有认证将会请求此地址进行认证 -->
+        <property name="loginUrl" value="/page/login"/>
+        <!-- 认证成功跳转界面 -->
+        <property name="successUrl" value="/root/index"/>
+        <!-- 通过unauthorizedUrl指定没有权限操作时跳转页面 -->
+        <property name="unauthorizedUrl" value="/page/401"/>
+        <property name="filterChainDefinitions">
+            <value>
+                <!-- 静态资源允许访问 -->
+                /static/** = anon
+                <!-- 登录页允许访问 -->
+                /user/login = anon
+                /publicKey = anon
+                /page/exception = anon
+                /verificationCode = anon
+                <!-- 其他资源需要认证 -->
+                /** = authc
+            </value>
+        </property>
+    </bean>
+
+ <!-- 安全管理器 -->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+    	<!-- 注入realm -->
+        <property name="realms">
+            <list>
+                <ref bean="securityRealm"/>
+            </list>
+            </property>
+        <!-- 注入缓存管理器 -->
+        <property name="cacheManager" ref="shiroEhcacheManager" /> 
+        <!-- 注入sessiong管理器 -->
+        <property name="sessionManager" ref="sessionManager" />
+    </bean>
+
+    <!-- 缓存管理器 使用Ehcache实现 -->
+    <bean id="shiroEhcacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+        <property name="cacheManagerConfigFile" value="classpath:ehcache-shiro.xml"/>
+    </bean>
+
+    <!-- 会话DAO -->
+    <bean id="sessionDAO" class="org.apache.shiro.session.mgt.eis.MemorySessionDAO"/>
+   <!--  <bean id="sessionDAO" class="com.vulnverify.web.session.SessionRedisDao"/> -->
+
+    <!-- 会话管理器 -->
+    <bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+<!--     <bean id="sessionManager" class="com.vulnverify.web.security.WebSessionManager"> -->
+       <!-- session的失效时长，单位毫秒 -->
+        <property name="globalSessionTimeout" value="36000000" />
+        <!--   <property name="sessionIdCookie" ref="sharesession" /> -->
+    </bean>
+    
+	<!-- 自定义 realm 安全数据 -->
+	<bean id="securityRealm" class="com.vulnverify.web.security.SecurityRealm"></bean>
+	
+    <!-- Shiro生命周期处理器 -->
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+</beans>

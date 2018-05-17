@@ -1,0 +1,74 @@
+.accordion {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.accordion-content {
+    display: none;
+}
+
+.accordion-item.active > .accordion-content {
+    display: block;
+}
+
+.accordion-item.active > .accordion-head::after {
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.accordion-first > .accordion-head {
+    color: #83889c;
+    background-color: #393b53;
+    line-height: 3em;
+    padding: 0 25px;
+}
+
+/*.accordion-first>.accordion-head::after{
+    content: ">";
+    float: right;
+}*/
+.accordion-first.active > .accordion-head {
+    background-color: #2c2d43;
+    color: #fff;
+}
+
+.accordion-first:hover > .accordion-head {
+    color: #fff;
+}
+
+/*.accordion-second>.accordion-head{
+    color: #c1c5c8;
+    background-color: #2c2d43;
+    line-height: 2em;
+    padding: 0 15px 0 30px;
+}
+.accordion-second.active>.accordion-head{
+    background-color: #4b5c66;
+}
+.accordion-third>.accordion-head{
+    font-size: 14px;
+    color: #63676a;
+    background-color: #2f343a;
+    line-height: 2em;
+    padding: 0 15px 0 30px;
+}
+.accordion-third.active>.accordion-head{
+    color: #0d90e2;
+}
+.accordion-third>.accordion-head::before{
+    content: "\2027";
+    margin-right: .5em;
+}*/
+
+.accordion-icon, .accordion-title {
+    vertical-align: middle;
+}
+
+.accordion-icon {
+    font-size: 14px;
+    width: 24px;
+    display: inline-block;
+}

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.vulnverify.web.dao.TSysRoleRightsMapper" >
+  <resultMap id="BaseResultMap" type="com.vulnverify.web.model.TSysRoleRights" >
+    <id column="ROLE_RIGHT_ID" property="roleRightId" jdbcType="INTEGER" />
+    <result column="ROLE_ID" property="roleId" jdbcType="INTEGER" />
+    <result column="RIGHT_ID" property="rightId" jdbcType="INTEGER" />
+    <result column="CREATE_USERID" property="createUserid" jdbcType="VARCHAR" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ROLE_RIGHT_ID, ROLE_ID, RIGHT_ID, CREATE_USERID, CREATE_DATE
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from T_SYS_ROLE_RIGHTS
+    where ROLE_RIGHT_ID = #{roleRightId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from T_SYS_ROLE_RIGHTS
+    where ROLE_RIGHT_ID = #{roleRightId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.vulnverify.web.model.TSysRoleRights" >
+    insert into T_SYS_ROLE_RIGHTS (ROLE_RIGHT_ID, ROLE_ID, RIGHT_ID, 
+      CREATE_USERID, CREATE_DATE)
+    values (#{roleRightId,jdbcType=INTEGER}, #{roleId,jdbcType=INTEGER}, #{rightId,jdbcType=INTEGER}, 
+      #{createUserid,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.vulnverify.web.model.TSysRoleRights" >
+    insert into T_SYS_ROLE_RIGHTS
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="roleRightId != null" >
+        ROLE_RIGHT_ID,
+      </if>
+      <if test="roleId != null" >
+        ROLE_ID,
+      </if>
+      <if test="rightId != null" >
+        RIGHT_ID,
+      </if>
+      <if test="createUserid != null" >
+        CREATE_USERID,
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="roleRightId != null" >
+        #{roleRightId,jdbcType=INTEGER},
+      </if>
+      <if test="roleId != null" >
+        #{roleId,jdbcType=INTEGER},
+      </if>
+      <if test="rightId != null" >
+        #{rightId,jdbcType=INTEGER},
+      </if>
+      <if test="createUserid != null" >
+        #{createUserid,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.vulnverify.web.model.TSysRoleRights" >
+    update T_SYS_ROLE_RIGHTS
+    <set >
+      <if test="roleId != null" >
+        ROLE_ID = #{roleId,jdbcType=INTEGER},
+      </if>
+      <if test="rightId != null" >
+        RIGHT_ID = #{rightId,jdbcType=INTEGER},
+      </if>
+      <if test="createUserid != null" >
+        CREATE_USERID = #{createUserid,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ROLE_RIGHT_ID = #{roleRightId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.vulnverify.web.model.TSysRoleRights" >
+    update T_SYS_ROLE_RIGHTS
+    set ROLE_ID = #{roleId,jdbcType=INTEGER},
+      RIGHT_ID = #{rightId,jdbcType=INTEGER},
+      CREATE_USERID = #{createUserid,jdbcType=VARCHAR},
+      CREATE_DATE = #{createDate,jdbcType=TIMESTAMP}
+    where ROLE_RIGHT_ID = #{roleRightId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByRoleIdAndRightId" parameterType="map" resultMap="BaseResultMap">
+   select 
+    	<include refid="Base_Column_List" />
+    from 
+    	T_SYS_ROLE_RIGHTS
+    where 
+    	ROLE_ID = #{roleId,jdbcType=INTEGER}
+    	and
+    	RIGHT_ID = #{rightId,jdbcType=INTEGER}
+  </select>
+</mapper>

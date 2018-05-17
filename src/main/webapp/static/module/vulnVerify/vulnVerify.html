@@ -1,0 +1,288 @@
+<link rel="stylesheet" href="module/vulnVerify/vulnVerify.css" />
+<div class="page-module page-module-main">
+    <div class="page-title shadow-box">
+        漏洞验证
+    </div>
+    <div class="page-content">
+        <form id="search-vulVerify" class="search-bar">
+            <div class="row">
+                <div class="form-group col-xs-35 col-md-35">
+                    <label class="control-label col-md-40">CNNVD编号:</label>
+                    <div class="col-md-80">
+                        <input class="form-control" name="vulnId">
+                    </div>
+                </div>
+                <div class="form-group col-xs-35 col-md-35">
+                    <label class="control-label col-md-40">漏洞名称:</label>
+                    <div class="col-md-80">
+                        <input class="form-control" name="vulnName">
+                    </div>
+                </div>
+                <div class="form-group col-xs-20 col-md-20">
+                    <div class="col-md-80 text-right">
+                        <button type="submit" class="btn btn-primary" data-code="" id="searchBtn">
+                            <span class="fa fa-search"></span>
+                            搜索
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <table id="vulVerify-table"></table>
+        <div id="vulVerify-pagination"></div>
+    </div>
+</div>
+<!--补丁信息-->
+<div class="page-module page-module-patch hidden">
+    <div class="page-title shadow-box">
+        补丁信息
+    </div>
+    <div class="page-content">
+        <div class="operate-bar">
+            <a id="dispatchReturn" class="btn btn-info operate-btn">
+                <span class="fa fa-arrow-left"></span>
+                <span class="operate-btn-text">返回</span>
+            </a>
+        </div>
+        <form id="patchDetail-form" class="search-bar">
+            <h3>
+              <strong> Adobe Flash Player 安全漏洞的修复措施</strong>
+            </h3>
+            <div class="row">
+                <div class="form-group col-xs-50 col-md-50">
+                    <label class="col-md-30 col-xs-30 control-label">补丁编号:</label>
+                    <div class="col-md-80 col-xs-80">
+                        <input class="form-control removeBorder" name="patchNo" readonly>
+                    </div>
+                </div>
+                <div class="form-group col-xs-50 col-md-50">
+                    <label class="col-md-30 col-xs-30 control-label">补丁大小:</label>
+                    <div class="col-md-80 col-xs-80">
+                        <input class="form-control removeBorder" name="patchFileSize" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-50 col-md-50">
+                    <label class="col-md-30 col-xs-30 control-label">重要级别:</label>
+                    <div class="col-md-80 col-xs-80">
+                        <input class="form-control removeBorder" name="importanceGrade" readonly>
+                    </div>
+                </div>
+                <div class="form-group col-xs-50 col-md-50">
+                    <label class="col-md-30 col-xs-30 control-label">发布时间:</label>
+                    <div class="col-md-80 col-xs-80">
+                        <input class="form-control removeBorder" name="createTime" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-50 col-md-50">
+                    <label class="col-md-30 col-xs-30 control-label">厂商:</label>
+                    <div class="col-md-80 col-xs-80">
+                        <input class="form-control removeBorder" name="compamny" readonly>
+                    </div>
+                </div>
+                <div class="form-group col-xs-50 col-md-50">
+                    <label class="col-md-30 col-xs-30 control-label">厂商主页:</label>
+                    <div class="col-md-80 col-xs-80">
+                        <input class="form-control removeBorder textColor text-underline openHref" name="refrenceWebsite"  readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-50 col-md-50">
+                    <label class="col-md-30 col-xs-30 control-label">MD5验证码:</label>
+                    <div class="col-md-80 col-xs-80">
+                        <input class="form-control removeBorder" name="fileMd5" readonly>
+                    </div>
+                </div>
+
+            </div>
+            <h4 class="h4Style">
+                <b class="spanStyle">
+                    <strong> 参考网址</strong>
+                </b>
+            </h4>
+            <div class="row">
+                <div class="form-group  col-md-120 col-xs-120">
+                    <label class="col-md-13 col-xs-13 control-label">来源:</label>
+                    <div class="col-md-100 col-xs-100">
+                        <input class="form-control removeBorder textColor text-underline openHref" name="vulnSource" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="downFile">
+                <div class="row">
+                    <label class="col-md-13 col-xs-13 control-label">补丁文件:</label>
+                </div>
+            </div>
+            <!--<div class="row">-->
+                <!--<div class="form-group col-md-120 col-xs-120">-->
+                    <!--<label class="col-md-13 col-xs-13 control-label">补丁文件:</label>-->
+                    <!--<div class="col-md-90 col-xs-90">-->
+                        <!--<input class="form-control removeBorder" name="patchName" readonly>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </form>
+            <h4 class="h4Style">
+                <b class="spanStyle">
+               <strong> 免责声明</strong>
+                </b>
+            </h4>
+            <div class="row">
+                <div class="form-group col-md-120 col-xs-120">
+                    <label class="col-md-6 col-xs-6 control-label"></label>
+                    <div class="col-md-90 col-xs-90">
+                        <p style="margin-top: 10px">
+                            本网站上所提供的补丁文件均是从各厂商的补丁发布官方网站上所获得,其版权归该补丁的合法所有者拥有。
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group col-md-120 col-xs-120">
+                    <label class="col-md-6 col-xs-6 control-label"></label>
+                    <div class="col-md-90 col-xs-90">
+                        <p>
+                            本网站不承担用户因使用这些补丁造成任何形式的损失及想干责任,如有任何问题请联系我们。
+                        </p>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+<!--验证代码界面-->
+<div id="validateDialog" class="modal fade" tabindex="-1" role="dialog" data-backdrop="true">
+    <div class="modal-dialog  edit-dialog checkDialog" role="document">
+        <div class="modal-content modalContent">
+            <div class="modal-header">
+                <button type="button" class="close closeConfirm" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title text-primary text-left"></h4>
+            </div>
+            <div class="modal-body">
+                <div class="custom-panel">
+                    <form id="validate-form" class="form-horizontal" method="post" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="form-group col-md-100 col-xs-100">
+                                <label class="col-md-30 col-xs-30 control-label">漏洞名称:</label>
+                                <div class="form-group col-md-90 col-xs-90">
+                                    <div class="col-md-120 col-xs-120">
+                                        <input class="form-control" name="vulnName" readonly disabled id="validateName">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-100 col-xs-100">
+                                <label class="col-md-30 col-xs-30 control-label">验证代码文件:</label>
+                                <div class="form-group col-md-90 col-xs-90">
+                                    <div class="col-md-120 col-xs-120">
+                                        <input name="files" type="file" class="file" id="validateFile"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-120 col-xs-110 text-center">
+                                <input type="submit" class="btn ok-btn" id="upSave" value="提交"/>
+                                <input type="reset" class="btn close-btn " id="validateClose" value="取消"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--上传补丁界面-->
+<div id="upPatchDialog" class="modal fade" tabindex="-1" role="dialog" data-backdrop="true">
+    <div class="modal-dialog  edit-dialog checkDialog" role="document">
+        <div class="modal-content modalContent">
+            <div class="modal-header">
+                <button type="button" class="close closeConfirm" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title text-primary text-left"></h4>
+            </div>
+            <div class="modal-body">
+                <div class="custom-panel">
+                    <form id="upPatch-form" class="form-horizontal" method="post" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="form-group col-md-100 col-xs-100">
+                                <label class="col-md-30 col-xs-30 control-label">漏洞名称:</label>
+                                <div class="form-group col-md-90 col-xs-90">
+                                    <div class="col-md-118 col-xs-118">
+                                        <input class="form-control" name="vulnName" readonly disabled id="imageName">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-100 col-xs-100">
+                                <label class="col-md-30 col-xs-30 control-label">补丁名称:</label>
+                                <div class="form-group col-md-90 col-xs-90">
+                                    <div class="col-md-118 col-xs-118">
+                                        <input class="form-control" name="patchName">
+                                        <span class="required">*</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-100 col-xs-100">
+                                <label class="col-md-30 col-xs-30 control-label">补丁文件:</label>
+                                <div class="form-group col-md-90 col-xs-90">
+                                    <div class="col-md-120 col-xs-120">
+                                        <input name="files" type="file" class="file" id="patchFile"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-120 col-xs-110 text-center">
+                                <input type="submit" class="btn ok-btn" value="提交"/>
+                                <input type="reset" class="btn close-btn" id="closePatch" value="取消"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--补丁验证  虚拟机-->
+<div class="page-module page-module-image hidden">
+    <div class="page-title shadow-box shadow-box-image">
+        <button type="button" class="btn btn-info goBack">返回</button>
+        <button type="button" class="btn btn-danger" style="margin:0 10px;">关闭</button>
+        <button type="button" class="btn btn-primary" id="screenShot">截屏</button>
+    </div>
+    <div class="page-content">
+        <div class="page-content-left">
+            <!--<img src="http://img.zcool.cn/community/010a1b554c01d1000001bf72a68b37.jpg@1280w_1l_2o_100sh.png" alt="" style="width: 100%;height: 100%;"/>-->
+            <div id="noVNC_screen">
+                <canvas id="noVNC_canvas" width="0" height="0">
+                    Canvas not supported.
+                </canvas>
+            </div>
+        </div>
+        <div class="page-content-right">
+            <div class="page-content-right-title">
+                漏洞验证纪录
+            </div>
+            <div style="border: 1px solid #666;width:95%;height:80%;margin: 10px auto 20px;overflow: auto">
+                <form id="image-form" class="form-horizontal dialog-form" style="padding:  10px 0px;">
+                    <canvas  id="canvas" class="hidden"></canvas>
+                    <textarea id="checkEditor" name="verifyContentSummary"></textarea>
+                   <div style="width: 370px;" id="imgCont">
+
+                   </div>
+                </form>
+
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-120 col-xs-110 text-center">
+                    <input type="submit" class="btn ok-btn" id="saveBtn" value="保存"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="module/vulnVerify/vulnVerify.js"></script>

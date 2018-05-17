@@ -1,0 +1,88 @@
+[{
+	"rightType": "1",
+	"rightName": "用户管理",
+	"rightCode": "menu-user-manage",
+	"parentRightId": "0",
+	"sort": "18000000",
+	"rightGrade": "1",
+	"children": [{
+		"rightType": "1",
+		"rightName": "查询",
+		"rightCode": "right-get-user-list",
+		"sort": "18000001",
+		"rightGrade": "2"
+		}, {
+		"rightType": "1",
+		"rightName": "添加",
+		"rightCode": "button-create-user",
+		"sort": "18000002",
+		"rightGrade": "2"
+		}, {
+		"rightType": "1",
+		"rightName": "修改",
+		"rightCode": "button-modify-user",
+		"sort": "18000003",
+		"rightGrade": "2"
+		}, {
+		"rightType": "1",
+		"rightName": "删除",
+		"rightCode": "button-remove-user",
+		"sort": "18000004",
+		"rightGrade": "2"
+		}, {
+		"rightType": "1",
+		"rightName": "启用",
+		"rightCode": "button-enable-user",
+		"sort": "18000005",
+		"rightGrade": "2"
+		}, {
+		"rightType": "1",
+		"rightName": "停用",
+		"rightCode": "button-disable-user",
+		"sort": "18000006",
+		"rightGrade": "2"
+	}]
+},{
+	"rightType": "1",
+	"rightName": "设备管理",
+	"rightCode": "menu-devide-manage",
+	"parentRightId": "0",
+	"sort": "18010000",
+	"rightGrade": "1",
+	"children": [{
+		"rightType": "1",
+		"rightName": "查询",
+		"rightCode": "right-get-devide-list",
+		"sort": "18010001",
+		"rightGrade": "2"
+		}]
+},{
+	"rightType": "1",
+	"rightName": "镜像管理",
+	"rightCode": "menu-image-manage",
+	"parentRightId": "0",
+	"sort": "18020000",
+	"rightGrade": "1",
+	"children": [{
+		"rightType": "1",
+		"rightName": "查询",
+		"rightCode": "right-get-image-list",
+		"sort": "18020001",
+		"rightGrade": "2"
+		}]
+},{
+	"rightType": "1",
+	"rightName": "容器管理",
+	"rightCode": "menu-containers-manage",
+	"parentRightId": "0",
+	"sort": "18030000",
+	"rightGrade": "1",
+	"children": [{
+		"rightType": "1",
+		"rightName": "查询",
+		"rightCode": "right-get-containers-list",
+		"sort": "18030001",
+		"rightGrade": "2"
+		}]
+}
+]

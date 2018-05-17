@@ -1,0 +1,30 @@
+[{
+	"rightType": "2",
+	"rightName": "漏洞管理",
+	"rightCode": "menu-vuln-manage",
+	"parentRightId": "0",
+	"sort": "11000000",
+	"rightGrade": "1",
+	"children": [{
+		"rightType": "2",
+		"rightName": "查询",
+		"rightCode": "right-get-vuln-list",
+		"sort": "11000001",
+		"rightGrade": "2"
+		}]
+},{
+	"rightType": "2",
+	"rightName": "漏洞验证",
+	"rightCode": "menu-vuln-verify-manage",
+	"parentRightId": "0",
+	"sort": "11010000",
+	"rightGrade": "1",
+	"children": [{
+		"rightType": "2",
+		"rightName": "查询",
+		"rightCode": "right-get-verify-list",
+		"sort": "11010001",
+		"rightGrade": "2"
+		}]
+}
+]

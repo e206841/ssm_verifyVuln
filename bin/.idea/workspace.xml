@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="da805722-c597-44fa-a0dd-edfecdc4b823" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/entity/DeviceMatchRange.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/entity/DeviceMatchRange.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/entity/PageData.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/entity/PageData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/entity/PageInfo.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/entity/PageInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/entity/PageQuery.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/entity/PageQuery.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/entity/Parameter.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/entity/Parameter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/entity/Result.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/entity/Result.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/entity/SimpleException.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/entity/SimpleException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/entity/SimpleResult.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/entity/SimpleResult.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/generic/GenericDao.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/generic/GenericDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/generic/GenericEnum.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/generic/GenericEnum.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/generic/GenericService.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/generic/GenericService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/generic/GenericServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/generic/GenericServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/orm/dialect/Dialect.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/orm/dialect/Dialect.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/orm/dialect/DialectFactory.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/orm/dialect/DialectFactory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/orm/dialect/MSDialect.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/orm/dialect/MSDialect.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/orm/dialect/MSPageHepler.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/orm/dialect/MSPageHepler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/orm/dialect/MySql5Dialect.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/orm/dialect/MySql5Dialect.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/orm/dialect/MySql5PageHepler.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/orm/dialect/MySql5PageHepler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/orm/dialect/OracleDialect.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/orm/dialect/OracleDialect.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/orm/dialect/PostgreDialect.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/orm/dialect/PostgreDialect.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/orm/dialect/PostgrePageHepler.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/orm/dialect/PostgrePageHepler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/orm/mybatis/Page.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/orm/mybatis/Page.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/orm/mybatis/PaginationResultSetHandlerInterceptor.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/orm/mybatis/PaginationResultSetHandlerInterceptor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/orm/mybatis/PaginationStatementHandlerInterceptor.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/orm/mybatis/PaginationStatementHandlerInterceptor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/redis/RedisCache.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/redis/RedisCache.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/redis/RedisDb.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/redis/RedisDb.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/AesUtil.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/AesUtil.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/ApplicationUtils.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/ApplicationUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/Base64Utils.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/Base64Utils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/CookieUtils.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/CookieUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/CustomDateFormat.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/CustomDateFormat.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/CxfInvokeUtil.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/CxfInvokeUtil.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/DataUtil.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/DataUtil.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/DateUtil.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/DateUtil.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/Entry.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/Entry.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/ExcelUtil.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/ExcelUtil.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/FileUtil.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/FileUtil.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/HttpsUtil.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/HttpsUtil.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/IpUtil.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/IpUtil.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/IpV4Util.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/IpV4Util.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/PasswordHash.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/PasswordHash.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/RSAUtils.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/core/utils/RSAUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/redis/RedisDb.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/redis/RedisDb.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/redis/RedisPool.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/redis/RedisPool.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/redis/Test.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/redis/Test.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/constant/Constant.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/constant/Constant.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/controller/BaseController.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/controller/BaseController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/controller/ImageController.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/controller/ImageController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/controller/PublicKeyController.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/controller/PublicKeyController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/controller/RootController.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/controller/RootController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/controller/TestController.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/controller/TestController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/controller/UserController.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/controller/UserController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/controller/VulnVerifyController.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/controller/VulnVerifyController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/converter/SimpleMappingJacksonHttpMessageConverter.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/converter/SimpleMappingJacksonHttpMessageConverter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/dao/TImageMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/dao/TImageMapper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/dao/TPatchSolutionMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/dao/TPatchSolutionMapper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/dao/TPlatformContainerMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/dao/TPlatformContainerMapper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/dao/TUserMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/dao/TUserMapper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/dao/TVulnVerifyLibMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/dao/TVulnVerifyLibMapper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/enums/user/UserType.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/enums/user/UserType.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/TImage.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/TImage.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/TPatchSolution.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/TPatchSolution.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/TPlatformContainer.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/TPlatformContainer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/TUser.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/TUser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/TUserExample$Criteria.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/TUserExample$Criteria.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/TUserExample$Criterion.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/TUserExample$Criterion.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/TUserExample$GeneratedCriteria.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/TUserExample$GeneratedCriteria.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/TUserExample.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/TUserExample.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/TVulnVerifyLib.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/TVulnVerifyLib.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/requestbody/IdReqBody.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/requestbody/IdReqBody.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/requestbody/ImageAddReqBody.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/requestbody/ImageAddReqBody.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/requestbody/ImageListReqBody.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/requestbody/ImageListReqBody.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/requestbody/LoginReqBody.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/requestbody/LoginReqBody.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/requestbody/UserCreateReqBody.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/requestbody/UserCreateReqBody.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/requestbody/UserListReqBody.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/requestbody/UserListReqBody.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/requestbody/UserModifyReqBody.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/requestbody/UserModifyReqBody.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/requestbody/VulnVerifyReqBody.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/requestbody/VulnVerifyReqBody.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/view/ImageView.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/view/ImageView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/view/UserView.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/view/UserView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/view/VulnVerifyView.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/model/view/VulnVerifyView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/security/OperationType.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/security/OperationType.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/security/PermissionSign.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/security/PermissionSign.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/security/Resource.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/security/Resource.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/security/RoleSign.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/security/RoleSign.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/security/TaskExcuteType.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/security/TaskExcuteType.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/security/WebSessionManager.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/security/WebSessionManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/service/ImageService.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/service/ImageService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/service/UserService.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/service/UserService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/service/VulnVerifyService.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/service/VulnVerifyService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/service/impl/ImageServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/service/impl/ImageServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/service/impl/UserServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/service/impl/UserServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/service/impl/VulnVerifyServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/service/impl/VulnVerifyServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/vulnverify/web/session/SessionRedisDao.class" afterPath="$PROJECT_DIR$/target/classes/com/vulnverify/web/session/SessionRedisDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/common_message.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/common_message.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/module/userManagement/userManagement.html" afterPath="$PROJECT_DIR$/src/main/webapp/static/module/userManagement/userManagement.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/module/userManagement/userManagement.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/module/userManagement/userManagement.js" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="cnitsec_vulnverify" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="userManagement.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/static/module/userManagement/userManagement.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="146" column="74" lean-forward="false" selection-start-line="146" selection-start-column="74" selection-end-line="146" selection-end-column="74" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="common_message.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/static/common_message.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userManagement.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/static/module/userManagement/userManagement.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="6" column="31" lean-forward="false" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>search-bar</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/webapp/static/mock/userMock/userMock.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/common.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/module/deviceManagement/deviceManagement.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/module/deviceManagement/deviceManagement.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/module/userManagement/userManagement.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/common_message.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/module/userManagement/userManagement.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cnitsec_vulnverify" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cnitsec_vulnverify" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cnitsec_vulnverify" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cnitsec_vulnverify" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cnitsec_vulnverify" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cnitsec_vulnverify" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cnitsec_vulnverify" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cnitsec_vulnverify" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cnitsec_vulnverify" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cnitsec_vulnverify" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cnitsec_vulnverify" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cnitsec_vulnverify" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="userManagement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cnitsec_vulnverify" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cnitsec_vulnverify" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="deviceManagement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cnitsec_vulnverify" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cnitsec_vulnverify" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mock" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cnitsec_vulnverify" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cnitsec_vulnverify" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mock" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="userMock" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cnitsec_vulnverify" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cnitsec_vulnverify" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mock" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menuMock" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cnitsec_vulnverify" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cnitsec_vulnverify" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../vulwebsys" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="da805722-c597-44fa-a0dd-edfecdc4b823" name="Default" comment="" />
+      <created>1525241651879</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1525241651879</updated>
+      <workItem from="1525241653097" duration="324000" />
+      <workItem from="1525246147370" duration="16000" />
+      <workItem from="1525330015084" duration="1180000" />
+      <workItem from="1525398238890" duration="90000" />
+      <workItem from="1525657690125" duration="6499000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="8109000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="0" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15169133" sideWeight="0.37894738" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.89241225" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15169133" sideWeight="0.6210526" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/module/userManagement/userManagement.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/module/userManagement/userManagement.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/mock/userMock/userMock.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-829">
+          <caret line="103" column="14" lean-forward="false" selection-start-line="103" selection-start-column="14" selection-end-line="103" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/mock/menuMock/menuMock.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6006">
+          <caret line="152" column="6" lean-forward="false" selection-start-line="152" selection-start-column="6" selection-end-line="152" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="386" column="34" lean-forward="false" selection-start-line="386" selection-start-column="34" selection-end-line="386" selection-end-column="34" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/module/deviceManagement/deviceManagement.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4991">
+          <caret line="124" column="32" lean-forward="false" selection-start-line="124" selection-start-column="32" selection-end-line="124" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/module/deviceManagement/deviceManagement.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="6" column="31" lean-forward="false" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/module/userManagement/userManagement.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="6" column="31" lean-forward="false" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/common_message.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/module/userManagement/userManagement.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="146" column="74" lean-forward="false" selection-start-line="146" selection-start-column="74" selection-end-line="146" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.vulnverify.web.dao.TVulnVerifyRecordMapper" >
+  <resultMap id="BaseResultMap" type="com.vulnverify.web.model.TVulnVerifyRecord" >
+    <id column="ID" property="id" jdbcType="INTEGER" />
+    <result column="VULN_ID" property="vulnId" jdbcType="INTEGER" />
+    <result column="VULN_NAME" property="vulnName" jdbcType="VARCHAR" />
+    <result column="VERIFY_CONTENT_SUMMARY" property="verifyContentSummary" jdbcType="VARCHAR" />
+    <result column="VERIFY_USER" property="verifyUser" jdbcType="VARCHAR" />
+    <result column="VERIFY_TIME" property="verifyTime" jdbcType="TIMESTAMP" />
+    <result column="VERIFY_FILE_URL" property="verifyFileUrl" jdbcType="VARCHAR" />
+    <result column="VERIFY_FILE_NAME" property="verifyFileName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, VULN_ID, VULN_NAME, VERIFY_CONTENT_SUMMARY, VERIFY_USER, VERIFY_TIME, VERIFY_FILE_URL, 
+    VERIFY_FILE_NAME
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from T_VULN_VERIFY_RECORD
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from T_VULN_VERIFY_RECORD
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.vulnverify.web.model.TVulnVerifyRecord" >
+    insert into T_VULN_VERIFY_RECORD (ID, VULN_ID, VULN_NAME, 
+      VERIFY_CONTENT_SUMMARY, VERIFY_USER, VERIFY_TIME, 
+      VERIFY_FILE_URL, VERIFY_FILE_NAME)
+    values (#{id,jdbcType=INTEGER}, #{vulnId,jdbcType=INTEGER}, #{vulnName,jdbcType=VARCHAR}, 
+      #{verifyContentSummary,jdbcType=VARCHAR}, #{verifyUser,jdbcType=VARCHAR}, #{verifyTime,jdbcType=TIMESTAMP}, 
+      #{verifyFileUrl,jdbcType=VARCHAR}, #{verifyFileName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.vulnverify.web.model.TVulnVerifyRecord" >
+    insert into T_VULN_VERIFY_RECORD
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="vulnId != null" >
+        VULN_ID,
+      </if>
+      <if test="vulnName != null" >
+        VULN_NAME,
+      </if>
+      <if test="verifyContentSummary != null" >
+        VERIFY_CONTENT_SUMMARY,
+      </if>
+      <if test="verifyUser != null" >
+        VERIFY_USER,
+      </if>
+      <if test="verifyTime != null" >
+        VERIFY_TIME,
+      </if>
+      <if test="verifyFileUrl != null" >
+        VERIFY_FILE_URL,
+      </if>
+      <if test="verifyFileName != null" >
+        VERIFY_FILE_NAME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="vulnId != null" >
+        #{vulnId,jdbcType=INTEGER},
+      </if>
+      <if test="vulnName != null" >
+        #{vulnName,jdbcType=VARCHAR},
+      </if>
+      <if test="verifyContentSummary != null" >
+        #{verifyContentSummary,jdbcType=VARCHAR},
+      </if>
+      <if test="verifyUser != null" >
+        #{verifyUser,jdbcType=VARCHAR},
+      </if>
+      <if test="verifyTime != null" >
+        #{verifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="verifyFileUrl != null" >
+        #{verifyFileUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="verifyFileName != null" >
+        #{verifyFileName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.vulnverify.web.model.TVulnVerifyRecord" >
+    update T_VULN_VERIFY_RECORD
+    <set >
+      <if test="vulnId != null" >
+        VULN_ID = #{vulnId,jdbcType=INTEGER},
+      </if>
+      <if test="vulnName != null" >
+        VULN_NAME = #{vulnName,jdbcType=VARCHAR},
+      </if>
+      <if test="verifyContentSummary != null" >
+        VERIFY_CONTENT_SUMMARY = #{verifyContentSummary,jdbcType=VARCHAR},
+      </if>
+      <if test="verifyUser != null" >
+        VERIFY_USER = #{verifyUser,jdbcType=VARCHAR},
+      </if>
+      <if test="verifyTime != null" >
+        VERIFY_TIME = #{verifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="verifyFileUrl != null" >
+        VERIFY_FILE_URL = #{verifyFileUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="verifyFileName != null" >
+        VERIFY_FILE_NAME = #{verifyFileName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.vulnverify.web.model.TVulnVerifyRecord" >
+    update T_VULN_VERIFY_RECORD
+    set VULN_ID = #{vulnId,jdbcType=INTEGER},
+      VULN_NAME = #{vulnName,jdbcType=VARCHAR},
+      VERIFY_CONTENT_SUMMARY = #{verifyContentSummary,jdbcType=VARCHAR},
+      VERIFY_USER = #{verifyUser,jdbcType=VARCHAR},
+      VERIFY_TIME = #{verifyTime,jdbcType=TIMESTAMP},
+      VERIFY_FILE_URL = #{verifyFileUrl,jdbcType=VARCHAR},
+      VERIFY_FILE_NAME = #{verifyFileName,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

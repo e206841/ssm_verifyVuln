@@ -1,0 +1,62 @@
+.isResetPwd input {
+    margin-left: -20px;
+}
+
+/*表格特定列样式*/
+
+.statusCls {
+    width: 100px;
+}
+
+.operateBar {
+    width: 250px;
+}
+/*详情部分*/
+.detail-title {
+  cursor: pointer;
+  color: blue;
+}
+.custom-title {
+  font-size: 18px;
+  color: blue;
+  border-bottom: 1px solid blue;
+  padding: 0 15px;
+  padding-bottom: 10px;
+}
+.custom-title strong {
+  font-weight: normal;
+}
+.detail-main-p {
+  font-size: 16px;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #eee;
+}
+.detail-main-p strong {
+  display: block;
+  float: left;
+  line-height: 40px;
+  padding: 0 15px;
+  height: 40px;
+  border-bottom: 1px solid blue;
+}
+/*增加或修改页面*/
+.required {
+  /*height: 100%;*/
+  position: absolute;
+  color: red;
+  right: 0;
+  top: 0;
+  margin-top: 0.4em;
+  margin-right: -0.7em;
+  font-size: 20px;
+}
+#addOrEdit-table thead th{
+  font-size: 14px;
+}
+.table-error {
+  position: absolute;
+  white-space: nowrap;
+  font-size: 12px;
+  color: #a94442;
+}

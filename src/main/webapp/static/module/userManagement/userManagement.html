@@ -1,0 +1,173 @@
+<link rel="stylesheet" href="module/userManagement/userManagement.css" />
+<div class="page-module page-module-main">
+    <div class="page-title shadow-box">
+        用户管理
+    </div>
+    <div class="page-content">
+        <form class="search-bar">
+            <div class="row">
+                <div class="form-group col-xs-35 col-md-35">
+                    <label class="control-label col-md-40">用户类型:</label>
+                    <div class="col-md-80">
+                        <select class="form-control" name="userType">
+                            <option value="">请选择</option>
+                            <option value="2">环境管理人员</option>
+                            <option value="1">漏洞验证人员</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group col-xs-35 col-md-35">
+                    <label class="control-label col-md-40">姓名:</label>
+                    <div class="col-md-80">
+                        <input class="form-control" name="userName">
+                    </div>
+                </div>
+                <div class="form-group col-xs-20 col-md-20">
+                    <!--  <label class="control-label invisible">查询</label> -->
+                    <div class="col-md-80 text-right">
+                        <button type="submit" class="btn btn-primary" data-code="">
+                            <span class="fa fa-search"></span>
+                            查询
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group col-xs-15 col-md-15">
+                    <div class="col-md-80">
+                        <a class="btn btn-warning add-btn" data-code="">
+                            <span class="fa fa-plus"></span>
+                            <span class="operate-btn-text">添加</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <table id="userManagement-table"></table>
+        <div id="userManagement-pagination"></div>
+    </div>
+</div>
+<div id="editDialog" class="modal fade" tabindex="-1" role="dialog" data-backdrop="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title text-primary text-left"></h4>
+            </div>
+            <div class="modal-body">
+                <form id="userInfo-form" class="form-horizontal dialog-form">
+                    <div class="form-group">
+                        <label class="col-md-35 col-xs-35 control-label">姓名:</label>
+                        <div class="col-md-60 col-xs-60">
+                            <input name="userName" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-35 col-xs-35 control-label">账号:</label>
+                        <div class="col-md-60 col-xs-60">
+                            <input name="userAccount" class="form-control" title="请输入长度为3-16位的字母、数字、下划线(_)或短横线(-)，区分大小写" placeholder="请输入长度为3-16位的字母、数字、下划线(_)或短横线(-)...">
+                        </div>
+                    </div>
+                     <div id="isResetPwd" class="isResetPwd form-group">
+                        <label class="col-md-35 col-xs-35 control-label">重置密码:</label>
+                        <div class="col-md-40 col-xs-60">
+                            <label class="radio-inline">
+                                <input type="checkbox" autocomplete="off">
+                            </label>
+                        </div>
+                    </div>
+                    <fieldset id="resetPwd">
+                        <div class="form-group">
+                            <label class="col-md-35 col-xs-35 control-label">密码:</label>
+                            <div class="col-md-60 col-xs-60">
+                                <input type="password" id="password" name="password" class="password form-control" title="请输入长度为6-18位的字母、数字、下划线(_)或短横线(-)，区分大小写"
+                                    placeholder="请输入长度为6-18位的字母、数字、下划线(_)或短横线(-)...">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-35 col-xs-35 control-label">确认密码:</label>
+                            <div class="col-md-60 col-xs-60">
+                                <input type="password" name="confirmPassword" class="password form-control" title="请输入长度为6-18位的字母、数字、下划线(_)或短横线(-)，区分大小写"
+                                    placeholder="请输入长度为6-18位的字母、数字、下划线(_)或短横线(-)...">
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="form-group">
+                        <label class="col-md-35 col-xs-35 control-label">用户类型:</label>
+                        <div class="col-md-60 col-xs-60">
+                            <select name="userType" class="form-control">
+                                <option value="">请选择</option>
+                                <option value="2">环境管理人员</option>
+                                <option value="1">漏洞验证人员</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-35 col-xs-35 control-label">电话:</label>
+                        <div class="col-md-60 col-xs-60">
+                            <input name="telephone" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-35 col-xs-35 control-label">邮箱:</label>
+                        <div class="col-md-60 col-xs-60">
+                            <input name="mailbox" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-120 col-xs-110 text-center">
+                            <input type="submit" class="btn ok-btn" value="确定" />
+                            <input type="reset" class="btn close-btn" value="取消" data-dismiss="modal"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="checkDialog" class="modal fade" tabindex="-1" role="dialog" data-backdrop="true">
+    <div class="modal-dialog modal-lg checkDialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title text-primary text-left">详情</h4>
+            </div>
+            <div class="modal-body">
+                <table id="details-table" class="table table-bordered table-striped details-table">
+                    <colgroup>
+                        <col class="col-xs-40">
+                        <col class="col-xs-80">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>姓名</th>
+                            <td data-name="userName"></td>
+                        </tr>
+                        <tr>
+                            <th>账号</th>
+                            <td data-name="userAccount"></td>
+                        </tr>
+                        <tr>
+                            <th>用户类型</th>
+                            <td data-name="userTypeName"></td>
+                        </tr>
+                        <tr>
+                            <th>电话</th>
+                            <td data-name="telephone"></td>
+                        </tr>
+                        <tr>
+                            <th>邮箱</th>
+                            <td data-name="mailbox"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- <div class="modal-footer text-center">
+                <button type="button" class="btn close-btn" data-dismiss="modal">关闭</button>
+            </div> -->
+        </div>
+    </div>
+</div>
+<script src="module/userManagement/userManagement.js"></script>

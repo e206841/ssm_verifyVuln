@@ -1,0 +1,40 @@
+<!-- <link rel="stylesheet" href="module\deviceManagement\deviceManagement.css" /> -->
+<div class="page-module page-module-main">
+    <div class="page-title shadow-box">
+        设备管理
+    </div>
+    <div class="page-content">
+        <form class="search-bar">
+            <div class="row">
+                <div class="form-group col-xs-35 col-md-35">
+                    <label class="control-label col-md-40">设备IP:</label>
+                    <div class="col-md-80">
+                        <input class="form-control" name="hostMachineIp">
+                    </div>
+                </div>
+                <div class="form-group col-xs-35 col-md-35">
+                    <label class="control-label col-md-40">状态:</label>
+                    <div class="col-md-80">
+                        <select name="status" class="form-control">
+                            <option value="">请选择</option>
+                            <option value="1">运行</option>
+                            <option value="2">未运行</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group col-xs-20 col-md-20">
+                    <!--  <label class="control-label invisible">查询</label> -->
+                    <div class="col-md-80 text-right">
+                        <button type="submit" class="btn btn-primary" data-code="">
+                            <span class="fa fa-search"></span>
+                            查询
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <table id="deviceManagement-table"></table>
+        <div id="deviceManagement-pagination"></div>
+    </div>
+</div>
+<script src="module\deviceManagement\deviceManagement.js"></script>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.vulnverify.web.dao.TSysRightsMapper" >
+  <resultMap id="BaseResultMap" type="com.vulnverify.web.model.TSysRights" >
+    <id column="RIGHT_ID" property="rightId" jdbcType="INTEGER" />
+    <result column="RIGHT_TYPE" property="rightType" jdbcType="INTEGER" />
+    <result column="RIGHT_NAME" property="rightName" jdbcType="VARCHAR" />
+    <result column="RIGHT_CODE" property="rightCode" jdbcType="VARCHAR" />
+    <result column="PARENT_RIGHT_ID" property="parentRightId" jdbcType="BIGINT" />
+    <result column="RIGHT_PATH" property="rightPath" jdbcType="VARCHAR" />
+    <result column="SORT" property="sort" jdbcType="INTEGER" />
+    <result column="CREATE_USERID" property="createUserid" jdbcType="VARCHAR" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="RIGHT_GRADE" property="rightGrade" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    RIGHT_ID, RIGHT_TYPE, RIGHT_NAME, RIGHT_CODE, PARENT_RIGHT_ID, RIGHT_PATH, SORT, 
+    CREATE_USERID, CREATE_DATE, RIGHT_GRADE
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from T_SYS_RIGHTS
+    where RIGHT_ID = #{rightId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from T_SYS_RIGHTS
+    where RIGHT_ID = #{rightId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.vulnverify.web.model.TSysRights" >
+    insert into T_SYS_RIGHTS (RIGHT_ID, RIGHT_TYPE, RIGHT_NAME, 
+      RIGHT_CODE, PARENT_RIGHT_ID, RIGHT_PATH, 
+      SORT, CREATE_USERID, CREATE_DATE, 
+      RIGHT_GRADE)
+    values (#{rightId,jdbcType=INTEGER}, #{rightType,jdbcType=INTEGER}, #{rightName,jdbcType=VARCHAR}, 
+      #{rightCode,jdbcType=VARCHAR}, #{parentRightId,jdbcType=BIGINT}, #{rightPath,jdbcType=VARCHAR}, 
+      #{sort,jdbcType=INTEGER}, #{createUserid,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, 
+      #{rightGrade,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.vulnverify.web.model.TSysRights"  useGeneratedKeys="true" keyProperty="rightId">
+    insert into T_SYS_RIGHTS
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="rightId != null" >
+        RIGHT_ID,
+      </if>
+      <if test="rightType != null" >
+        RIGHT_TYPE,
+      </if>
+      <if test="rightName != null" >
+        RIGHT_NAME,
+      </if>
+      <if test="rightCode != null" >
+        RIGHT_CODE,
+      </if>
+      <if test="parentRightId != null" >
+        PARENT_RIGHT_ID,
+      </if>
+      <if test="rightPath != null" >
+        RIGHT_PATH,
+      </if>
+      <if test="sort != null" >
+        SORT,
+      </if>
+      <if test="createUserid != null" >
+        CREATE_USERID,
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE,
+      </if>
+      <if test="rightGrade != null" >
+        RIGHT_GRADE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="rightId != null" >
+        #{rightId,jdbcType=INTEGER},
+      </if>
+      <if test="rightType != null" >
+        #{rightType,jdbcType=INTEGER},
+      </if>
+      <if test="rightName != null" >
+        #{rightName,jdbcType=VARCHAR},
+      </if>
+      <if test="rightCode != null" >
+        #{rightCode,jdbcType=VARCHAR},
+      </if>
+      <if test="parentRightId != null" >
+        #{parentRightId,jdbcType=BIGINT},
+      </if>
+      <if test="rightPath != null" >
+        #{rightPath,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null" >
+        #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="createUserid != null" >
+        #{createUserid,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="rightGrade != null" >
+        #{rightGrade,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.vulnverify.web.model.TSysRights" >
+    update T_SYS_RIGHTS
+    <set >
+      <if test="rightType != null" >
+        RIGHT_TYPE = #{rightType,jdbcType=INTEGER},
+      </if>
+      <if test="rightName != null" >
+        RIGHT_NAME = #{rightName,jdbcType=VARCHAR},
+      </if>
+      <if test="rightCode != null" >
+        RIGHT_CODE = #{rightCode,jdbcType=VARCHAR},
+      </if>
+      <if test="parentRightId != null" >
+        PARENT_RIGHT_ID = #{parentRightId,jdbcType=BIGINT},
+      </if>
+      <if test="rightPath != null" >
+        RIGHT_PATH = #{rightPath,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null" >
+        SORT = #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="createUserid != null" >
+        CREATE_USERID = #{createUserid,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="rightGrade != null" >
+        RIGHT_GRADE = #{rightGrade,jdbcType=INTEGER},
+      </if>
+    </set>
+    where RIGHT_ID = #{rightId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.vulnverify.web.model.TSysRights" >
+    update T_SYS_RIGHTS
+    set RIGHT_TYPE = #{rightType,jdbcType=INTEGER},
+      RIGHT_NAME = #{rightName,jdbcType=VARCHAR},
+      RIGHT_CODE = #{rightCode,jdbcType=VARCHAR},
+      PARENT_RIGHT_ID = #{parentRightId,jdbcType=BIGINT},
+      RIGHT_PATH = #{rightPath,jdbcType=VARCHAR},
+      SORT = #{sort,jdbcType=INTEGER},
+      CREATE_USERID = #{createUserid,jdbcType=VARCHAR},
+      CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      RIGHT_GRADE = #{rightGrade,jdbcType=INTEGER}
+    where RIGHT_ID = #{rightId,jdbcType=INTEGER}
+  </update>
+  <!-- 通过角色id 查询角色 拥有的权限 -->
+    <select id="selectSysRightsByRoleId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        SELECT p.* FROM T_SYS_RIGHTS p LEFT JOIN T_SYS_ROLE_RIGHTS rp ON rp.right_id = p.right_id
+        WHERE rp.role_id = #{roleId,jdbcType=INTEGER}
+        order by p.SORT asc
+    </select>
+     <!-- 通过角色id 查询角色 拥有的权限 -->
+    <select id="selectByRightCode" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+      	select
+  		<include refid="Base_Column_List"/>
+  	from
+  		T_SYS_RIGHTS
+  	where
+  		RIGHT_CODE = #{rightCode,jdbcType=VARCHAR}
+    </select>
+</mapper>

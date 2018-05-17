@@ -1,0 +1,18 @@
+.required {
+    position: absolute;
+    color: red;
+    right: 0;
+    top: 0;
+    margin-top: 0.4em;
+    margin-right: -.7em;
+    font-size: 20px;
+}
+.delete-btn{
+    color: #fff;
+}
+.delete-btn:hover {
+    color: #fff;
+}
+.form-control{
+    padding: 6px 0 !important;
+}

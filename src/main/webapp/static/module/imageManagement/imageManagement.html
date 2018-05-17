@@ -1,0 +1,241 @@
+<link rel="stylesheet" href="module/imageManagement/imageManagement.css" />
+<div class="page-module page-module-main">
+    <div class="page-title shadow-box">
+        镜像管理
+    </div>
+    <div class="page-content">
+        <form class="search-bar">
+            <div class="row">
+                <div class="form-group col-xs-35 col-md-35">
+                    <label class="control-label col-md-40">镜像名:</label>
+                    <div class="col-md-80">
+                        <input class="form-control" name="imageName">
+                    </div>
+                </div>
+                <div class="form-group col-xs-35 col-md-35">
+                    <label class="control-label col-md-40">OS系统:</label>
+                    <div class="col-md-80">
+                        <input class="form-control" name="imageName">
+                    </div>
+                </div>
+                <div class="form-group col-xs-20 col-md-20">
+                    <div class="col-md-80 text-right">
+                        <button type="submit" class="btn btn-primary" data-code="">
+                            <span class="fa fa-search"></span>
+                            搜索
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group col-xs-15 col-md-15">
+                    <div class="col-md-80">
+                        <a class="btn btn-warning add-btn" data-code="">
+                            <span class="fa fa-plus"></span>
+                            <span class="operate-btn-text">添加</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <table id="imageManagement-table"></table>
+        <div id="imageManagement-pagination"></div>
+    </div>
+</div>
+<!-- 添加镜像 -->
+<div id="addDialog" class="modal fade" tabindex="-1" role="dialog" data-backdrop="true">
+    <div class="modal-dialog modal-lg editDialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title text-primary text-left"></h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal dialog-form  addDialog-form">
+                    <div class="form-group">
+                        <label class="col-md-30 col-xs-30 control-label">镜像名:</label>
+                        <div class="col-md-60 col-xs-60">
+                            <input class="form-control" name="imageName">
+                            <span class="required">*</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-30 col-xs-30 control-label">0S系统名称:</label>
+                        <div class="col-md-60 col-xs-60 networkName ">
+                            <input class="form-control" name="osName">
+                            <span class="required">*</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-30 col-xs-30 control-label">OS系统版本:</label>
+                        <div class="col-md-60 col-xs-60">
+                            <input class="form-control" name="osVersions">
+                            <span class="required">*</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-xs-120">
+                            <label class="col-md-30 col-xs-30 control-label">镜像描述:</label>
+                            <div class="col-xs-60 col-md-60">
+                                <textarea class="form-control" name="description" cols="50" rows="4"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <!---->
+                    <div class="row">
+                        <div class="form-group col-xs-120">
+                            <label class="col-md-30 col-xs-30 control-label">支撑环境:</label>
+                            <div class="form-group col-xs-10 col-md-10">
+                                <div class="row col-xs-35 col-md-35">
+                                    <div class="col-md-80 col-xs-80">
+                                        <a class="btn btn-warning add-btn" data-code="" id="environmentAddBtn">
+                                            <span class="fa fa-plus"></span>
+                                            <span class="operate-btn-text">添加</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-xs-120">
+                            <label class="col-md-30 col-xs-30 control-label"></label>
+                            <div class="form-group col-xs-70 col-md-70">
+                                <table id="addEnvironment-table"></table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-xs-120">
+                            <label class="col-md-30 col-xs-30 control-label">应用软件:</label>
+                            <div class="form-group col-xs-20 col-md-10">
+                                <div class="row col-xs-15 col-md-15">
+                                    <div class="col-md-80">
+                                        <a class="btn btn-warning add-btn" data-code="" id="versionAddBtn">
+                                            <span class="fa fa-plus"></span>
+                                            <span class="operate-btn-text">添加</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-xs-120">
+                            <label class="col-md-30 col-xs-30 control-label"></label>
+                            <div class="form-group col-xs-70 col-md-70">
+                                <table id="addVersion-table"></table>
+                            </div>
+                        </div>
+                    </div>
+                <!-- 镜像文件提交 -->
+                <form id="subImage-form" class="form-horizontal" method="post" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="form-group col-xs-120">
+                            <label class="col-md-30 col-xs-30 control-label">镜像文件:</label>
+                            <div class="form-group col-xs-20 col-md-20">
+                                <div class="row col-xs-15 col-md-15">
+                                    <div class="col-md-80">
+                                        <input name="uploadFile" type="file" class="file  fa fa-plus" id="patchFile"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                    <div class="row">
+                            <div class="form-group col-xs-120">
+                                <label class="col-md-30 col-xs-30 control-label"></label>
+                                <div class="form-group col-xs-70 col-md-70">
+                                    <table id="imageFile_table"></table>
+                                </div>
+                            </div>
+                    </div>
+                <form class="form-horizontal dialog-form  addDialog-form">
+                    <div class="form-group" style="padding-bottom: 40px">
+                        <div class="col-md-120 col-xs-110 text-center">
+                            <input type="submit" class="btn ok-btn"  value="确定" />
+                            <input type="reset" class="btn close-btn" value="取消" data-dismiss="modal"/>
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 支撑环境 -->
+<div id="environment_add_Dialog" class="modal fade" tabindex="-1" role="dialog" data-backdrop="true">
+    <div class="modal-dialog modal-lg editDialog" role="document">
+        <div class="modal-content" style="width: 600px;margin: 0 auto">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title text-primary text-left"></h4>
+            </div>
+            <div class="modal-body">
+                <form id="environmentAddForm" class="form-horizontal dialog-form">
+                    <div class="form-group">
+                        <label class="col-md-30 col-xs-30 control-label">环境名称:</label>
+                        <div class="col-md-60 col-xs-60">
+                            <input class="form-control" name="imageName">
+                            <span class="required">*</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-30 col-xs-30 control-label">环境版本:</label>
+                        <div class="col-md-60 col-xs-60 networkName ">
+                            <input class="form-control" name="imageVersion">
+                            <span class="required">*</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-120 col-xs-110 text-center">
+                            <input type="submit" class="btn ok-btn" value="确定"/>
+                            <input type="reset" class="btn close-btn" value="取消" id="environmentClose"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--软件版本-->
+<div id="version_add_Dialog" class="modal fade" tabindex="-1" role="dialog" data-backdrop="true">
+    <div class="modal-dialog modal-lg editDialog" role="document">
+        <div class="modal-content" style="width: 600px;margin: 0 auto">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title text-primary text-left"></h4>
+            </div>
+            <div class="modal-body">
+                <form id="version_add-form" class="form-horizontal dialog-form">
+                    <div class="form-group">
+                        <label class="col-md-30 col-xs-30 control-label">软件名称:</label>
+                        <div class="col-md-60 col-xs-60">
+                            <input class="form-control" name="versionName">
+                            <span class="required">*</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-30 col-xs-30 control-label">软件版本:</label>
+                        <div class="col-md-60 col-xs-60 networkName ">
+                            <input class="form-control" name="versionNo">
+                            <span class="required">*</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-120 col-xs-110 text-center">
+                            <input type="submit" class="btn ok-btn" value="确定"/>
+                            <input type="reset" class="btn close-btn" value="取消"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="module/imageManagement/imageManagement.js"></script>

@@ -1,0 +1,13 @@
+.isResetPwd input {
+    margin-left: -20px;
+}
+
+/*表格特定列样式*/
+
+.statusCls {
+    width: 100px;
+}
+
+.operateBar {
+    width: 250px;
+}

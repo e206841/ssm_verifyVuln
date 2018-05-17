@@ -1,0 +1,406 @@
+<link rel="stylesheet" href="module/vulnManagement/vulnManagement.css" />
+
+<!--主要页面开始-->
+<div class="page-module page-module-main">
+    <!--导航部分开始-->
+    <div class="page-title shadow-box">
+        <span>漏洞管理</span>
+    </div>
+    <!--导航部分开始-->
+    
+    <div class="page-content">
+        <!--搜索部分开始-->
+        <form class="search-bar">
+            <div class="row">
+                <div class="form-group col-xs-35 col-md-35">
+                    <label class="control-label col-md-40">漏洞编号:</label>
+                    <div class="col-md-80">
+                        <input class="form-control" name="vbCode">
+                        <!--<select class="form-control" name="userType">
+                            <option value="">请选择</option>
+                            <option value="0">环境管理人员</option>
+                            <option value="1">漏洞验证人员</option>
+                        </select>-->
+                    </div>
+                </div>
+                <div class="form-group col-xs-35 col-md-35">
+                    <label class="control-label col-md-40">漏洞名称:</label>
+                    <div class="col-md-80">
+                        <input class="form-control" name="vbName">
+                    </div>
+                </div>
+                <div class="form-group col-xs-20 col-md-20">
+                    <div class="col-md-80 text-right">
+                        <button type="submit" class="btn btn-primary" data-code="">
+                            <span class="fa fa-search"></span>
+                            搜索
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group col-xs-15 col-md-15">
+                    <div class="col-md-80">
+                        <a class="btn btn-warning add-btn" data-code="">
+                            <span class="fa fa-plus"></span>
+                            <span class="operate-btn-text">添加</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!--搜索部分结束-->
+        
+        <table id="userManagement-table"></table>
+        <div id="userManagement-pagination"></div>
+    </div>
+</div>
+
+<!--详情页面开始-->
+<div class="page-module page-module-detail hidden">
+    <!--导航部分开始-->
+    <div class="page-title shadow-box">
+        <span class="detail-title">漏洞管理</span>
+        >
+        <span>漏洞详情</span>
+    </div>
+    <!--导航部分开始-->
+    
+    <div class="page-content">
+        <!--详情主体部分开始-->
+        <div class="">
+            <form id="detail-form" class="form-horizontal">
+                <p class="custom-title">
+                    <strong>Grammarly extenstion for Chrome 安全漏洞</strong>
+                </p>
+                <div class="row">
+                    <div class="form-group col-xs-40 col-md-40">
+                        <label class="col-md-36 col-xs-30 control-label">CNNVD编号:</label>
+                        <div class="col-md-80 col-xs-80">
+                            <input class="form-control removeBorder" name="vbsrc" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-40 col-md-40">
+                        <label class="col-md-35 col-xs-30 control-label">危害等级:</label>
+                        <div class="col-md-80 col-xs-80">
+                            <input class="form-control removeBorder" name="problemType" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-40 col-xs-40">
+                        <label class="col-md-36 col-xs-30 control-label">CVE编号:</label>
+                        <div class="col-md-80 col-xs-80">
+                            <input class="form-control removeBorder" name="vbName" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-40 col-xs-40">
+                        <label class="col-md-35 col-xs-30 control-label">漏洞类型:</label>
+                        <div class="col-md-80 col-xs-80">
+                            <input class="form-control removeBorder" name="sgvbCode" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-xs-40 col-md-40">
+                        <label class="col-md-36 col-xs-30 control-label">发布时间:</label>
+                        <div class="col-md-80 col-xs-80">
+                            <input class="form-control removeBorder" name="company" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-40 col-md-40">
+                        <label class="col-md-35 col-xs-30 control-label">威胁类型:</label>
+                        <div class="col-md-80 col-xs-80">
+                            <input class="form-control removeBorder" name="network" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-xs-40 col-md-40">
+                        <label class="col-md-36 col-xs-30 control-label">更新时间:</label>
+                        <div class="col-md-80 col-xs-80">
+                            <input class="form-control removeBorder" name="vulCategory" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-40 col-md-40">
+                        <label class="col-md-35 col-xs-30 control-label">厂商:</label>
+                        <div class="col-md-80 col-xs-80">
+                            <input class="form-control removeBorder" name="vulType" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-xs-40 col-md-40">
+                        <label class="col-md-36 col-xs-30 control-label">漏洞来源:</label>
+                        <div class="col-md-80 col-xs-80">
+                            <input class="form-control removeBorder" name="bizsys" readonly>
+                        </div>
+                    </div>
+                </div>
+                <p class="detail-main-p">
+                    <strong>漏洞简介</strong>
+                </p>
+                <div class="row">
+                    <div class="form-group col-md-120 col-xs-120">
+                      <!--123-->
+                        <!--<label class="col-md-12 col-xs-12 control-label">漏洞详细描述:</label>
+                        <div class="col-md-105 col-xs-105">
+                            <textarea class="form-control removeBorder" name="remark" cols="100" rows="5"
+                                      readonly></textarea>
+                        </div>-->
+                    </div>
+                </div>
+                <p class="detail-main-p">
+                    <strong>参考网址</strong>
+                </p>
+                <div class="row">
+                    <div class="form-group col-md-120 col-xs-120">
+                        <label class="col-md-12 col-xs-12 control-label">来源:</label>
+                        <div class="col-md-105 col-xs-105">
+                            <textarea class="form-control removeBorder" name="remark" cols="100" rows="5" readonly></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-120 col-xs-120">
+                        <label class="col-md-12 col-xs-12 control-label">链接:</label>
+                        <div class="col-md-105 col-xs-105">
+                            <textarea class="form-control removeBorder" name="remark" cols="100" rows="5" readonly></textarea>
+                        </div>
+                    </div>
+                </div>
+                <p class="detail-main-p">
+                    <strong>受影响实体</strong>
+                </p>
+                <div class="row">
+                    <div class="form-group col-md-120 col-xs-120">
+                        <!--暂无-->
+                        <!--<label class="col-md-12 col-xs-12 control-label">来源:</label>
+                        <div class="col-md-105 col-xs-105">
+                            <textarea class="form-control removeBorder" name="remark" cols="100" rows="5" readonly></textarea>
+                        </div>-->
+                    </div>
+                </div>
+                <p class="detail-main-p">
+                    <strong>补丁</strong>
+                </p>
+                <div class="row">
+                    <div class="form-group col-md-120 col-xs-120">
+                      <!--暂无-->
+                        <!--<label class="col-md-12 col-xs-12 control-label">来源:</label>
+                        <div class="col-md-105 col-xs-105">
+                            <textarea class="form-control removeBorder" name="remark" cols="100" rows="5" readonly></textarea>
+                        </div>-->
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--详情主体部分结束-->
+        
+    </div>
+</div>
+
+<!--增加页面开始-->
+<div class="page-module page-module-addOrEdit hidden">
+    <div class="page-title shadow-box">
+        <span class="detail-title">漏洞管理</span>
+        >
+        <span class="vuln-title-name"></span>
+    </div>
+    <div class="page-content">
+    	  <div class="">
+    	  	<form id="userInfo-form" class="form-horizontal dialog-form">
+              <div class="form-group">
+                  <label class="col-md-40 col-xs-40 control-label">漏洞名称:</label>
+                  <div class="col-md-20 col-xs-20">
+                      <!--<div class="col-md-2 col-xs-2 required">*</div>-->
+                      <input name="vbName" class="form-control">
+                      <span class="required" aria-required="true">*</span>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label class="col-md-40 col-xs-40 control-label">CNNVD编号:</label>
+                  <div class="col-md-20 col-xs-20">
+                      <input name="account1" class="form-control" title="" placeholder="">
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label class="col-md-40 col-xs-40 control-label">CVE编号:</label>
+                  <div class="col-md-20 col-xs-20">
+                      <input name="account2" class="form-control" title="" placeholder="">
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label class="col-md-40 col-xs-40 control-label">漏洞类型:</label>
+                  <div class="col-md-20 col-xs-20">
+                      <select name="userType" id="userType" class="form-control">
+                          <option value="">请选择</option>
+                          <!--<option value="0">环境管理人员</option>
+                          <option value="1">漏洞验证人员</option>-->
+                      </select>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label class="col-md-40 col-xs-40 control-label">危害等级:</label>
+                  <div class="col-md-20 col-xs-20">
+                      <select name="harmLevel" id="" class="form-control">
+                          <option value="">请选择</option>
+                      </select>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label class="col-md-40 col-xs-40 control-label">威胁类型:</label>
+                  <div class="col-md-20 col-xs-20">
+                      <input name="account3" class="form-control" title="" placeholder="">
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label class="col-md-40 col-xs-40 control-label">厂商:</label>
+                  <div class="col-md-20 col-xs-20">
+                      <input name="account4" class="form-control" title="" placeholder="">
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label class="col-md-40 col-xs-40 control-label">漏洞来源:</label>
+                  <div class="col-md-20 col-xs-20">
+                      <input name="account" class="form-control" title="" placeholder="">
+                      <span class="required" aria-required="true">*</span>
+                  </div>
+              </div>
+              <!--<fieldset id="resetPwd">
+                  <div class="form-group">
+                      <label class="col-md-35 col-xs-35 control-label">密码:</label>
+                      <div class="col-md-60 col-xs-60">
+                          <input type="password" id="password" name="password" class="password form-control" title="请输入长度为6-18位的字母、数字、下划线(_)或短横线(-)，区分大小写"
+                              placeholder="请输入长度为6-18位的字母、数字、下划线(_)或短横线(-)...">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label class="col-md-35 col-xs-35 control-label">确认密码:</label>
+                      <div class="col-md-60 col-xs-60">
+                          <input type="password" name="confirmPassword" class="password form-control" title="请输入长度为6-18位的字母、数字、下划线(_)或短横线(-)，区分大小写"
+                              placeholder="请输入长度为6-18位的字母、数字、下划线(_)或短横线(-)...">
+                      </div>
+                  </div>
+              </fieldset>-->
+              <div class="form-group">
+                  <label class="col-md-40 col-xs-40 control-label">漏洞描述:</label>
+                  <div class="col-md-35 col-xs-35">
+                      <textarea class="form-control" name="vulnDescribe" cols="100" rows="3"></textarea>
+                      <span class="required">*</span>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label class="col-md-40 col-xs-40 control-label">参考网址:</label>
+                  <div class="col-md-35 col-xs-35">
+                      <textarea class="form-control" name="suggestText" cols="100" rows="3"></textarea>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label class="col-md-40 col-xs-40 control-label">受影响实体:</label>
+                  <div class="col-md-35 col-xs-35">
+                      <textarea class="form-control" name="suggestText" cols="100" rows="3"></textarea>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label class="col-md-40 col-xs-40 control-label">漏洞验证环境:</label>
+                  <div class="col-md-35 col-xs-35">
+                      <table id="addOrEdit-table"></table>
+                      <span class="table-error hidden">请选择一个</span>
+                      <!--<textarea class="form-control" name="suggestText" cols="100" rows="3"></textarea>-->
+                      <span class="required">*</span>
+                  </div>
+                    <div class="col-md-10 col-xs-10" style="padding-left: 20px;">
+                        <a class="btn btn-warning select-btn" data-code="">
+                            <!--<span class="fa fa-plus"></span>-->
+                            <span class="operate-btn-text">选择</span>
+                        </a>
+                    </div>
+              </div>
+              <div class="form-group">
+                  <label class="col-md-40 col-xs-40 control-label">漏洞补丁方案:</label>
+                  <div class="col-md-35 col-xs-35">
+                      <textarea class="form-control" name="suggestText" cols="100" rows="3"></textarea>
+                  </div>
+              </div>
+              <!--<div class="form-group">
+                  <label class="col-md-35 col-xs-35 control-label">电话:</label>
+                  <div class="col-md-60 col-xs-60">
+                      <input name="mobile" class="form-control">
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label class="col-md-35 col-xs-35 control-label">邮箱:</label>
+                  <div class="col-md-60 col-xs-60">
+                      <input name="email" class="form-control">
+                  </div>
+              </div>-->
+              <div class="form-group">
+                  <div class="col-md-120 col-xs-110 text-center">
+                      <input type="submit" class="btn ok-btn" value="确定" />
+                      <input type="reset" class="btn close-btn" value="取消" />
+                  </div>
+              </div>
+          </form>
+    	  </div>
+    </div>
+</div>
+
+
+<!--选择镜像弹框开始-->
+<div id="selectDialog" class="modal fade" tabindex="-1" role="dialog" data-backdrop="true">
+    <div class="modal-dialog selectDialog" role="document" style="width: 900px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <!--<h4 class="modal-title text-primary text-left">详情</h4>-->
+            </div>
+            <div class="modal-body">
+              <form class="select-search-bar">
+                  <div class="row">
+                      <div class="form-group col-xs-30 col-md-30">
+                          <label class="control-label col-md-40">镜像名:</label>
+                          <div class="col-md-80">
+                              <input class="form-control" name="ui">
+                          </div>
+                      </div>
+                      <div class="form-group col-xs-30 col-md-30">
+                          <label class="control-label col-md-40">OS系统:</label>
+                          <div class="col-md-80">
+                              <input class="form-control" name="ua">
+                          </div>
+                      </div>
+                      <div class="form-group col-xs-30 col-md-30">
+                          <label class="control-label col-md-40">应用软件:</label>
+                          <div class="col-md-80">
+                              <input class="form-control" name="ul">
+                          </div>
+                      </div>
+                      <div class="form-group col-xs-20 col-md-20">
+                          <div class="col-md-80 text-right">
+                              <button type="submit" class="btn btn-primary" data-code="">
+                                  <span class="fa fa-search"></span>
+                                  搜索
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </form>
+              
+              <table id="select-table"></table>
+              <div id="select-pagination"></div>
+            </div>
+            <div class="modal-footer">
+                  <div class="form-group">
+                  <div class="col-md-120 col-xs-110 text-center">
+                      <button type="button" class="btn btn-primary" id="select-ok-btn">确定</button>
+                      <button type="button" class="btn btn-default" id="select-cancel-btn">取消</button>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--选择镜像弹框结束-->
+
+<script src="module/vulnManagement/vulnManagement.js"></script>

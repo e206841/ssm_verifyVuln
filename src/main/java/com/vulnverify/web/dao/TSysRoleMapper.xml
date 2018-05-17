@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.vulnverify.web.dao.TSysRoleMapper" >
+  <resultMap id="BaseResultMap" type="com.vulnverify.web.model.TSysRole" >
+    <id column="ROLE_ID" property="roleId" jdbcType="INTEGER" />
+    <result column="ROLE_NAME" property="roleName" jdbcType="VARCHAR" />
+    <result column="ROLE_TYPE" property="roleType" jdbcType="INTEGER" />
+    <result column="ROLE_DESC" property="roleDesc" jdbcType="VARCHAR" />
+    <result column="DATA_SCOPE" property="dataScope" jdbcType="INTEGER" />
+    <result column="IS_SYS" property="isSys" jdbcType="VARCHAR" />
+    <result column="CREATE_USERID" property="createUserid" jdbcType="VARCHAR" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="UPDATE_USERID" property="updateUserid" jdbcType="VARCHAR" />
+    <result column="UPDATE_DATE" property="updateDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ROLE_ID, ROLE_NAME, ROLE_TYPE, ROLE_DESC, DATA_SCOPE, IS_SYS, CREATE_USERID, CREATE_DATE, 
+    UPDATE_USERID, UPDATE_DATE
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from T_SYS_ROLE
+    where ROLE_ID = #{roleId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from T_SYS_ROLE
+    where ROLE_ID = #{roleId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.vulnverify.web.model.TSysRole" >
+    insert into T_SYS_ROLE (ROLE_ID, ROLE_NAME, ROLE_TYPE, 
+      ROLE_DESC, DATA_SCOPE, IS_SYS, 
+      CREATE_USERID, CREATE_DATE, UPDATE_USERID, 
+      UPDATE_DATE)
+    values (#{roleId,jdbcType=INTEGER}, #{roleName,jdbcType=VARCHAR}, #{roleType,jdbcType=INTEGER}, 
+      #{roleDesc,jdbcType=VARCHAR}, #{dataScope,jdbcType=INTEGER}, #{isSys,jdbcType=VARCHAR}, 
+      #{createUserid,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, #{updateUserid,jdbcType=VARCHAR}, 
+      #{updateDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.vulnverify.web.model.TSysRole"  useGeneratedKeys="true" keyProperty="roleId">
+    insert into T_SYS_ROLE
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="roleId != null" >
+        ROLE_ID,
+      </if>
+      <if test="roleName != null" >
+        ROLE_NAME,
+      </if>
+      <if test="roleType != null" >
+        ROLE_TYPE,
+      </if>
+      <if test="roleDesc != null" >
+        ROLE_DESC,
+      </if>
+      <if test="dataScope != null" >
+        DATA_SCOPE,
+      </if>
+      <if test="isSys != null" >
+        IS_SYS,
+      </if>
+      <if test="createUserid != null" >
+        CREATE_USERID,
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE,
+      </if>
+      <if test="updateUserid != null" >
+        UPDATE_USERID,
+      </if>
+      <if test="updateDate != null" >
+        UPDATE_DATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="roleId != null" >
+        #{roleId,jdbcType=INTEGER},
+      </if>
+      <if test="roleName != null" >
+        #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="roleType != null" >
+        #{roleType,jdbcType=INTEGER},
+      </if>
+      <if test="roleDesc != null" >
+        #{roleDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="dataScope != null" >
+        #{dataScope,jdbcType=INTEGER},
+      </if>
+      <if test="isSys != null" >
+        #{isSys,jdbcType=VARCHAR},
+      </if>
+      <if test="createUserid != null" >
+        #{createUserid,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUserid != null" >
+        #{updateUserid,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.vulnverify.web.model.TSysRole" >
+    update T_SYS_ROLE
+    <set >
+      <if test="roleName != null" >
+        ROLE_NAME = #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="roleType != null" >
+        ROLE_TYPE = #{roleType,jdbcType=INTEGER},
+      </if>
+      <if test="roleDesc != null" >
+        ROLE_DESC = #{roleDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="dataScope != null" >
+        DATA_SCOPE = #{dataScope,jdbcType=INTEGER},
+      </if>
+      <if test="isSys != null" >
+        IS_SYS = #{isSys,jdbcType=VARCHAR},
+      </if>
+      <if test="createUserid != null" >
+        CREATE_USERID = #{createUserid,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUserid != null" >
+        UPDATE_USERID = #{updateUserid,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ROLE_ID = #{roleId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.vulnverify.web.model.TSysRole" >
+    update T_SYS_ROLE
+    set ROLE_NAME = #{roleName,jdbcType=VARCHAR},
+      ROLE_TYPE = #{roleType,jdbcType=INTEGER},
+      ROLE_DESC = #{roleDesc,jdbcType=VARCHAR},
+      DATA_SCOPE = #{dataScope,jdbcType=INTEGER},
+      IS_SYS = #{isSys,jdbcType=VARCHAR},
+      CREATE_USERID = #{createUserid,jdbcType=VARCHAR},
+      CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      UPDATE_USERID = #{updateUserid,jdbcType=VARCHAR},
+      UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP}
+    where ROLE_ID = #{roleId,jdbcType=INTEGER}
+  </update>
+  <!-- 根据用户角色类型查询角色信息 -->
+  <select id="selectRoleByRoleType" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+   select 
+    <include refid="Base_Column_List" />
+    from T_SYS_ROLE
+    where ROLE_TYPE = #{roleType,jdbcType=INTEGER}
+  </select>
+</mapper>

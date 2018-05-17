@@ -1,0 +1,307 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    line-height: 1.42858;
+    background: url("../image/login-background.png") no-repeat center;
+    background-size: cover;
+}
+
+/*.background-container {
+    height: calc(100% - 160px);
+    background: url("../image/login-background.png") no-repeat center;
+    background-size: cover;
+    box-sizing: border-box;
+    background-origin: content-box;
+}*/
+/*.head-title {
+    line-height: 80px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #34495e;
+    padding-left: 130px;
+}
+.foot-title {
+    line-height: 30px;
+    text-align: center;
+    color: #34495e;
+}*/
+.login-window {
+    height: 380px;
+    width: 400px;
+    right: 160px;
+    background-color: #EAF2FF;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 4px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, .1);
+}
+
+.head {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 3em;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-color: #578cda;
+}
+
+.tab {
+    display: inline-block;
+    width: calc(100% - .5px);
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+.tab:hover{
+    text-decoration: none;
+    color: white;
+}
+
+.content {
+    padding: 0 15px;
+}
+.panel{
+    background-color: #EAF2FF;
+    border: 0;
+    box-shadow: 0;
+}
+.field-group {
+    margin: 30px 0;
+    position: relative;
+    color: darkgray;
+    width: inherit;
+}
+
+.field {
+    background-color: #fff;
+    position: relative;
+    z-index: 0;
+    border-radius: 4px;
+    display: inline-block;
+    width: 100%;
+}
+
+.field .icon {
+    width: 50px;
+    padding: .8em 0;
+    margin-bottom: 0;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #F1F2F6;
+    text-align: center;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    float: left;
+}
+
+.field input {
+    font-size: 14px;
+    vertical-align: middle;
+    width: calc(100% - 60px);
+    padding: .5em 0 .5em 10px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border: 0;
+    margin: 0;
+}
+
+.field input:focus {
+    outline: none;
+}
+
+.field-border {
+    box-shadow: 0 0 0 1px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    border-radius: 4px;
+}
+
+.field input:focus + .field-border {
+    box-shadow: 0 0 1px 1px rgb(77, 144, 254);
+}
+
+.field input:focus ~ .icon {
+    color: rgb(77, 144, 254);
+}
+
+.field-warning {
+    width: 100%;
+    position: absolute;
+    margin-top: 4px;
+    padding: 2px;
+    color: #a94442;
+    font-size: 12px;
+}
+
+/*自定义的表单验证样式*/
+.has-error,
+.has-error ~ .icon {
+    color: #a94442 !important;
+}
+
+.has-error + .field-border {
+    box-shadow: 0 0 1px 1px #a94442 !important;
+}
+
+.has-success,
+.has-success ~ .icon {
+    color: green !important;
+}
+
+.has-success + .field-border {
+    box-shadow: 0 0 1px 1px green !important;
+}
+
+/*!自定义的表单验证样式*/
+.verification-input {
+    width: 50%;
+}
+
+.verification-img {
+    vertical-align: middle;
+    width: 160px;
+    height: 32px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.assist-group {
+    font-size: 12px;
+    height: 18px;
+}
+
+/*.autoLoad{
+    vertical-align: middle;
+}
+.autoLoad.pseudo-right-checkbox{
+    border-color: darkgray;
+}*/
+/*.forget-password {
+    font-weight: bold;
+    color: #6997E0;
+    float: right;
+    cursor: pointer;
+}*/
+
+.submit {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #578cda;
+    line-height: 2em;
+    display: block;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: #5385CF;
+}
+
+[type=submit] {
+    display: none;
+}
+
+.commit-submit {
+    letter-spacing: .4em;
+}
+
+/*复选框*/
+/*.pseudo-right-checkbox{
+    color:#6997E0;
+    width: 1em;
+    height: 1em;
+    padding: 2px;
+    border: 1px solid;
+    display: inline-block;
+}
+.pseudo-right-checkbox>input{
+    position: absolute;
+    margin: 0;
+    opacity: 0;
+    vertical-align: bottom;
+}
+.pseudo-right-checkbox>input+.icon-pseudo-checkbox-container{
+    display: inline-block;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    color: transparent;
+    transition:color .3s;
+}
+.pseudo-right-checkbox>input:checked+.icon-pseudo-checkbox-container{
+    color: currentColor;
+}
+.pseudo-right-checkbox>input+.icon-pseudo-checkbox-container::before{
+    content: "\e903";
+}
+.pseudo-right-checkbox::after{
+    content:"c";
+    opacity: 0;
+    display: inline-block;
+}*/
+/*fonts*/
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.eot?69uw8g');
+    src: url('fonts/icomoon.eot?69uw8g#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?69uw8g') format('truetype'),
+    url('fonts/icomoon.woff?69uw8g') format('woff'),
+    url('fonts/icomoon.svg?69uw8g#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pseudo-checkbox-container:before {
+    content: "\e903";
+}
+
+.icon-user:before {
+    content: "\e900";
+}
+
+.icon-lock:before {
+    content: "\e901";
+}
+
+.icon-delicious:before {
+    content: "\e902";
+}
+
+.icon-email:before {
+    content: "\e945";
+}

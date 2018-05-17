@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vulnverify.web.dao.TUserMapper">
+  <resultMap id="BaseResultMap" type="com.vulnverify.web.model.TUser">
+    <id column="USER_ID" jdbcType="VARCHAR" property="userId" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="USER_TYPE" jdbcType="INTEGER" property="userType" />
+    <result column="USER_ACCOUNT" jdbcType="VARCHAR" property="userAccount" />
+    <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+    <result column="TELEPHONE" jdbcType="VARCHAR" property="telephone" />
+    <result column="MAILBOX" jdbcType="VARCHAR" property="mailbox" />
+    <result column="STATUS" jdbcType="VARCHAR" property="status" />
+    <result column="UPDATE_USER" jdbcType="VARCHAR" property="updateUser" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="CREATE_USER" jdbcType="VARCHAR" property="createUser" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    USER_ID, USER_NAME, USER_TYPE, USER_ACCOUNT, PASSWORD, TELEPHONE, MAILBOX, STATUS, 
+    UPDATE_USER, UPDATE_TIME, CREATE_USER, CREATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_USER
+    where USER_ID = #{userId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_USER
+    where USER_ID = #{userId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.vulnverify.web.model.TUser" useGeneratedKeys="true" keyProperty="userId">
+    insert into T_USER (USER_ID, USER_NAME, USER_TYPE, 
+      USER_ACCOUNT, PASSWORD, TELEPHONE, 
+      MAILBOX, STATUS, UPDATE_USER, 
+      UPDATE_TIME, CREATE_USER, CREATE_TIME
+      )
+    values (#{userId,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, #{userType,jdbcType=INTEGER}, 
+      #{userAccount,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{telephone,jdbcType=VARCHAR}, 
+      #{mailbox,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{updateUser,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.vulnverify.web.model.TUser"  useGeneratedKeys="true" keyProperty="userId">
+   	<selectKey keyProperty="userId" resultType="String" order="BEFORE">
+            select replace(uuid(),'-','') from dual
+        </selectKey>
+    insert into T_USER
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="userName != null">
+        USER_NAME,
+      </if>
+      <if test="userType != null">
+        USER_TYPE,
+      </if>
+      <if test="userAccount != null">
+        USER_ACCOUNT,
+      </if>
+      <if test="password != null">
+        PASSWORD,
+      </if>
+      <if test="telephone != null">
+        TELEPHONE,
+      </if>
+      <if test="mailbox != null">
+        MAILBOX,
+      </if>
+      <if test="status != null">
+        STATUS,
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="createUser != null">
+        CREATE_USER,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userType != null">
+        #{userType,jdbcType=INTEGER},
+      </if>
+      <if test="userAccount != null">
+        #{userAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null">
+        #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="mailbox != null">
+        #{mailbox,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.vulnverify.web.model.TUser">
+    update T_USER
+    <set>
+      <if test="userName != null">
+        USER_NAME = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userType != null">
+        USER_TYPE = #{userType,jdbcType=INTEGER},
+      </if>
+      <if test="userAccount != null">
+        USER_ACCOUNT = #{userAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null">
+        TELEPHONE = #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="mailbox != null">
+        MAILBOX = #{mailbox,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        STATUS = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where USER_ID = #{userId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.vulnverify.web.model.TUser">
+    update T_USER
+    set USER_NAME = #{userName,jdbcType=VARCHAR},
+      USER_TYPE = #{userType,jdbcType=INTEGER},
+      USER_ACCOUNT = #{userAccount,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      TELEPHONE = #{telephone,jdbcType=VARCHAR},
+      MAILBOX = #{mailbox,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=VARCHAR},
+      UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}
+    where USER_ID = #{userId,jdbcType=VARCHAR}
+  </update>
+  
+  	<!-- 以下为非生成代码 -->
+   <resultMap id="UserView" type="com.vulnverify.web.model.view.UserView">
+    <id column="USER_ID" jdbcType="VARCHAR" property="userId" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="USER_TYPE" jdbcType="VARCHAR" property="userType" />
+    <result column="USER_ACCOUNT" jdbcType="VARCHAR" property="userAccount" />
+    <result column="TELEPHONE" jdbcType="VARCHAR" property="telephone" />
+    <result column="MAILBOX" jdbcType="VARCHAR" property="mailbox" />
+    <result column="STATUS" jdbcType="VARCHAR" property="status" />
+    <result column="UPDATE_USER" jdbcType="VARCHAR" property="updateUser" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <!--分页查询列表-->
+  <select id="getList" parameterType="map" resultMap="UserView">
+	  select USER_ID,USER_NAME,USER_TYPE,USER_ACCOUNT,TELEPHONE,MAILBOX,STATUS,UPDATE_USER,UPDATE_TIME
+	  from T_USER
+	  where 1=1
+     	 <if test="userName != null and userName != ''" >
+	      and  USER_NAME like concat('%',#{userName,jdbcType=VARCHAR},'%')
+	     </if>
+	      <if test="userType != null and userType != ''" >
+	      and USER_TYPE=#{userType,jdbcType=INTEGER}
+	     </if>
+  		order by UPDATE_TIME DESC
+  </select>
+  <!-- 根据用户账户获取用户 -->
+  <select id="getByUserAccout" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_USER
+    where USER_ACCOUNT = #{userAccount,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByEmail" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_USER
+    where MAILBOX = #{mailbox,jdbcType=VARCHAR}
+  </select>
+  
+   <!-- 用户登录验证查询 -->
+  <select id="authentication" resultMap="BaseResultMap" parameterType="map">
+      select
+      <include refid="Base_Column_List" />
+      from T_USER
+      where USER_ACCOUNT = #{userAccount,jdbcType=VARCHAR} 
+      		and PASSWORD = #{password,jdbcType=VARCHAR}
+  </select>
+</mapper>

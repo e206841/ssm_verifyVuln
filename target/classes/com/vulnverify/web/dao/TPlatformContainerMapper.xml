@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.vulnverify.web.dao.TPlatformContainerMapper" >
+  <resultMap id="BaseResultMap" type="com.vulnverify.web.model.TPlatformContainer" >
+    <id column="CONTAINER_ID" property="containerId" jdbcType="INTEGER" />
+    <result column="CONTAINER_UUID" property="containerUuid" jdbcType="VARCHAR" />
+    <result column="IMAGE_ID" property="imageId" jdbcType="INTEGER" />
+    <result column="IMAGE_NAME" property="imageName" jdbcType="VARCHAR" />
+    <result column="HOSTMACHINE_ID" property="hostmachineId" jdbcType="INTEGER" />
+    <result column="HOSTNAME" property="hostname" jdbcType="VARCHAR" />
+    <result column="CONTAINER_NAME" property="containerName" jdbcType="CHAR" />
+    <result column="DISCRIPTION" property="discription" jdbcType="VARCHAR" />
+    <result column="CPU_CORE_NUM" property="cpuCoreNum" jdbcType="INTEGER" />
+    <result column="RAM_SIZE" property="ramSize" jdbcType="INTEGER" />
+    <result column="DISK_SIZE" property="diskSize" jdbcType="INTEGER" />
+    <result column="STATUS" property="status" jdbcType="VARCHAR" />
+    <result column="CREATE_USER" property="createUser" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="UPDATE_USER" property="updateUser" jdbcType="VARCHAR" />
+    <result column="UPDATE_TIME" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+   <resultMap id="PlatformContainerView" type="com.vulnverify.web.model.view.PlatformContainerView" >
+     <id column="CONTAINER_ID" property="containerId" jdbcType="INTEGER" />
+    <result column="CONTAINER_NAME" property="containerName" jdbcType="VARCHAR" />
+    <result column="IMAGE_NAME" property="imageName" jdbcType="VARCHAR" />
+    <result column="STATUS" property="status" jdbcType="VARCHAR" />
+    <result column="CPU_CORE_NUM" property="cpuCoreNum" jdbcType="INTEGER" />
+    <result column="RAM_SIZE" property="ramSize" jdbcType="INTEGER" />
+    <result column="DISK_SIZE" property="diskSize" jdbcType="INTEGER" />
+    <result column="CREATE_TIME"     property="createTime" jdbcType="TIMESTAMP" />
+    <result column="HOSTNAME" property="hostName" jdbcType="VARCHAR" />
+    <result column="DISCRIPTION" property="discription" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    CONTAINER_ID, CONTAINER_UUID, IMAGE_ID, IMAGE_NAME, HOSTMACHINE_ID, HOSTNAME, CONTAINER_NAME, 
+    DISCRIPTION, CPU_CORE_NUM, RAM_SIZE, DISK_SIZE, STATUS, CREATE_USER, CREATE_TIME, 
+    UPDATE_USER, UPDATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from T_PLATFORM_CONTAINER
+    where CONTAINER_ID = #{containerId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from T_PLATFORM_CONTAINER
+    where CONTAINER_ID = #{containerId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.vulnverify.web.model.TPlatformContainer" >
+    insert into T_PLATFORM_CONTAINER (CONTAINER_ID, CONTAINER_UUID, IMAGE_ID, 
+      IMAGE_NAME, HOSTMACHINE_ID, HOSTNAME, 
+      CONTAINER_NAME, DISCRIPTION, CPU_CORE_NUM, 
+      RAM_SIZE, DISK_SIZE, STATUS, 
+      CREATE_USER, CREATE_TIME, UPDATE_USER, 
+      UPDATE_TIME)
+    values (#{containerId,jdbcType=INTEGER}, #{containerUuid,jdbcType=VARCHAR}, #{imageId,jdbcType=INTEGER}, 
+      #{imageName,jdbcType=VARCHAR}, #{hostmachineId,jdbcType=INTEGER}, #{hostname,jdbcType=VARCHAR}, 
+      #{containerName,jdbcType=CHAR}, #{discription,jdbcType=VARCHAR}, #{cpuCoreNum,jdbcType=INTEGER}, 
+      #{ramSize,jdbcType=INTEGER}, #{diskSize,jdbcType=INTEGER}, #{status,jdbcType=VARCHAR}, 
+      #{createUser,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.vulnverify.web.model.TPlatformContainer" >
+    insert into T_PLATFORM_CONTAINER
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="containerId != null" >
+        CONTAINER_ID,
+      </if>
+      <if test="containerUuid != null" >
+        CONTAINER_UUID,
+      </if>
+      <if test="imageId != null" >
+        IMAGE_ID,
+      </if>
+      <if test="imageName != null" >
+        IMAGE_NAME,
+      </if>
+      <if test="hostmachineId != null" >
+        HOSTMACHINE_ID,
+      </if>
+      <if test="hostname != null" >
+        HOSTNAME,
+      </if>
+      <if test="containerName != null" >
+        CONTAINER_NAME,
+      </if>
+      <if test="discription != null" >
+        DISCRIPTION,
+      </if>
+      <if test="cpuCoreNum != null" >
+        CPU_CORE_NUM,
+      </if>
+      <if test="ramSize != null" >
+        RAM_SIZE,
+      </if>
+      <if test="diskSize != null" >
+        DISK_SIZE,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="createUser != null" >
+        CREATE_USER,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="updateUser != null" >
+        UPDATE_USER,
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="containerId != null" >
+        #{containerId,jdbcType=INTEGER},
+      </if>
+      <if test="containerUuid != null" >
+        #{containerUuid,jdbcType=VARCHAR},
+      </if>
+      <if test="imageId != null" >
+        #{imageId,jdbcType=INTEGER},
+      </if>
+      <if test="imageName != null" >
+        #{imageName,jdbcType=VARCHAR},
+      </if>
+      <if test="hostmachineId != null" >
+        #{hostmachineId,jdbcType=INTEGER},
+      </if>
+      <if test="hostname != null" >
+        #{hostname,jdbcType=VARCHAR},
+      </if>
+      <if test="containerName != null" >
+        #{containerName,jdbcType=CHAR},
+      </if>
+      <if test="discription != null" >
+        #{discription,jdbcType=VARCHAR},
+      </if>
+      <if test="cpuCoreNum != null" >
+        #{cpuCoreNum,jdbcType=INTEGER},
+      </if>
+      <if test="ramSize != null" >
+        #{ramSize,jdbcType=INTEGER},
+      </if>
+      <if test="diskSize != null" >
+        #{diskSize,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null" >
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null" >
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.vulnverify.web.model.TPlatformContainer" >
+    update T_PLATFORM_CONTAINER
+    <set >
+      <if test="containerUuid != null" >
+        CONTAINER_UUID = #{containerUuid,jdbcType=VARCHAR},
+      </if>
+      <if test="imageId != null" >
+        IMAGE_ID = #{imageId,jdbcType=INTEGER},
+      </if>
+      <if test="imageName != null" >
+        IMAGE_NAME = #{imageName,jdbcType=VARCHAR},
+      </if>
+      <if test="hostmachineId != null" >
+        HOSTMACHINE_ID = #{hostmachineId,jdbcType=INTEGER},
+      </if>
+      <if test="hostname != null" >
+        HOSTNAME = #{hostname,jdbcType=VARCHAR},
+      </if>
+      <if test="containerName != null" >
+        CONTAINER_NAME = #{containerName,jdbcType=CHAR},
+      </if>
+      <if test="discription != null" >
+        DISCRIPTION = #{discription,jdbcType=VARCHAR},
+      </if>
+      <if test="cpuCoreNum != null" >
+        CPU_CORE_NUM = #{cpuCoreNum,jdbcType=INTEGER},
+      </if>
+      <if test="ramSize != null" >
+        RAM_SIZE = #{ramSize,jdbcType=INTEGER},
+      </if>
+      <if test="diskSize != null" >
+        DISK_SIZE = #{diskSize,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null" >
+        CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null" >
+        UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where CONTAINER_ID = #{containerId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.vulnverify.web.model.TPlatformContainer" >
+    update T_PLATFORM_CONTAINER
+    set CONTAINER_UUID = #{containerUuid,jdbcType=VARCHAR},
+      IMAGE_ID = #{imageId,jdbcType=INTEGER},
+      IMAGE_NAME = #{imageName,jdbcType=VARCHAR},
+      HOSTMACHINE_ID = #{hostmachineId,jdbcType=INTEGER},
+      HOSTNAME = #{hostname,jdbcType=VARCHAR},
+      CONTAINER_NAME = #{containerName,jdbcType=CHAR},
+      DISCRIPTION = #{discription,jdbcType=VARCHAR},
+      CPU_CORE_NUM = #{cpuCoreNum,jdbcType=INTEGER},
+      RAM_SIZE = #{ramSize,jdbcType=INTEGER},
+      DISK_SIZE = #{diskSize,jdbcType=INTEGER},
+      STATUS = #{status,jdbcType=VARCHAR},
+      CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP}
+    where CONTAINER_ID = #{containerId,jdbcType=INTEGER}
+  </update>
+    <!--分页查询列表-->
+  <select id="getList" parameterType="map" resultMap="PlatformContainerView">
+	  select
+	    CONTAINER_ID, 
+	    CONTAINER_NAME, 
+	    IMAGE_NAME, 
+	    STATUS,
+	    CPU_CORE_NUM,
+	    RAM_SIZE,
+	    DISK_SIZE,
+	    CREATE_TIME,
+	    HOSTNAME,
+	    DISCRIPTION
+	  from T_PLATFORM_CONTAINER  	
+      where 1=1
+      <if test="containerName !=null and containerName != ''" >
+	     and  CONTAINER_NAME like concat('%',#{containerName,jdbcType=VARCHAR},'%')
+	  </if>
+	  <if test="imageName != null and imageName != ''" >
+	     and IMAGE_NAME like concat('%',#{imageName,jdbcType=VARCHAR},'%')
+	  </if>
+  	  order by CREATE_TIME DESC
+  </select>
+  <select id="selectMatch" resultMap="BaseResultMap" parameterType="com.vulnverify.web.model.TPlatformContainer" >
+    select 
+    <include refid="Base_Column_List" />
+    from T_PLATFORM_CONTAINER
+  	<where>
+	  <if test="containerUuid != null" >
+        CONTAINER_UUID = #{containerUuid,jdbcType=VARCHAR}
+      </if>
+      <if test="imageId != null" >
+       AND IMAGE_ID = #{imageId,jdbcType=INTEGER}
+      </if>
+      <if test="imageName != null" >
+       AND IMAGE_NAME = #{imageName,jdbcType=VARCHAR}
+      </if>
+      <if test="hostmachineId != null" >
+       AND HOSTMACHINE_ID = #{hostmachineId,jdbcType=INTEGER}
+      </if>
+      <if test="hostname != null" >
+       AND HOSTNAME = #{hostname,jdbcType=VARCHAR}
+      </if>
+      <if test="containerName != null" >
+       AND CONTAINER_NAME = #{containerName,jdbcType=CHAR}
+      </if>
+      <if test="discription != null" >
+       AND DISCRIPTION = #{discription,jdbcType=VARCHAR}
+      </if>
+      <if test="cpuCoreNum != null" >
+       AND CPU_CORE_NUM = #{cpuCoreNum,jdbcType=INTEGER}
+      </if>
+      <if test="ramSize != null" >
+       AND RAM_SIZE = #{ramSize,jdbcType=INTEGER}
+      </if>
+      <if test="diskSize != null" >
+       AND DISK_SIZE = #{diskSize,jdbcType=INTEGER}
+      </if>
+      <if test="status != null" >
+       AND STATUS = #{status,jdbcType=VARCHAR}
+      </if>
+      <if test="createUser != null" >
+       AND CREATE_USER = #{createUser,jdbcType=VARCHAR}
+      </if>
+      <if test="createTime != null" >
+       AND CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateUser != null" >
+       AND UPDATE_USER = #{updateUser,jdbcType=VARCHAR}
+      </if>
+      <if test="updateTime != null" >
+       AND UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP}
+      </if>    
+    </where>
+  </select>
+</mapper>
